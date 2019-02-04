@@ -4,9 +4,9 @@ import re
 
 import yaml
 
+from core.rest_client.request_manager import RequestManager
 from definitions import ENV_YML
 from definitions import STORED_ID
-from core.rest_client.request_manager import RequestManager
 
 CONFIG_DATA = yaml.load(open(ENV_YML))
 
