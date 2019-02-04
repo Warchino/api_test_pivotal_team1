@@ -25,3 +25,11 @@ def after_scenario(context, scenario):
     """
     if 'delete_data' in scenario.tags:
         CommonHelper.delete_member()
+
+
+def after_all(context):
+    """
+    Method who run after all features.
+    :param context: Input context.
+    """
+    ProjectHelper.delete_all_projects()

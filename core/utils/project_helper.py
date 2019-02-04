@@ -1,10 +1,10 @@
 """Helper for projects of pivotal tracker"""
 import json
-from random import choices
 import string
+from random import choices
 
-from definitions import STORED_ID
 from core.rest_client.request_manager import RequestManager
+from definitions import STORED_ID
 
 
 class ProjectHelper:
@@ -26,3 +26,25 @@ class ProjectHelper:
         client.set_body(json.dumps(body))
         response = client.execute_request()
         STORED_ID['project_id'] = response.json()['id']
+
+    @staticmethod
+    def delete_project(project_id):
+        """
+        Static method for delete a project.
+        """
+        client = RequestManager()
+        client.set_method("DELETE")
+        client.set_endpoint("/projects/{0}".format(project_id))
+        client.execute_request()
+
+    @staticmethod
+    def delete_all_projects():
+        """
+        Static method for delete all projects.
+        """
+        client = RequestManager()
+        client.set_method("GET")
+        client.set_endpoint("/projects")
+        response = client.execute_request()
+        for project in response.json():
+            ProjectHelper.delete_project(project["id"])
