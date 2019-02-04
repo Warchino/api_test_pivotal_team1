@@ -3,8 +3,11 @@ import json
 import string
 from random import choices
 
+from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from definitions import STORED_ID
+
+LOGGER = SingletonLogger().get_logger()
 
 
 class ProjectHelper:
@@ -34,7 +37,7 @@ class ProjectHelper:
         """
         client = RequestManager()
         client.set_method("DELETE")
-        client.set_endpoint("/projects/{0}".format(str(project_id)))
+        client.set_endpoint("/projects/{0}".format(project_id))
         client.execute_request()
 
     @staticmethod
@@ -47,4 +50,7 @@ class ProjectHelper:
         client.set_endpoint("/projects")
         response = client.execute_request()
         for project in response.json():
-            ProjectHelper.delete_project(project["id"])
+            try:
+                ProjectHelper.delete_project(project["id"])
+            except TypeError:
+                LOGGER.info(project)

@@ -6,11 +6,13 @@ from random import choices
 
 import yaml
 
+from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from definitions import ENV_YML
 from definitions import STORED_ID
 
 CONFIG_DATA = yaml.load(open(ENV_YML))
+LOGGER = SingletonLogger().get_logger()
 
 
 class CommonHelper:
@@ -90,4 +92,7 @@ class CommonHelper:
         body = {"name": name}
         client.set_body(json.dumps(body))
         response = client.execute_request()
-        STORED_ID['story_id'] = response.json()['id']
+        try:
+            STORED_ID['story_id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())
