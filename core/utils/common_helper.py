@@ -1,6 +1,8 @@
 """Module helper for the project"""
 import json
 import re
+import string
+from random import choices
 
 import yaml
 
@@ -61,3 +63,17 @@ class CommonHelper:
         client.set_method("DELETE")
         client.set_endpoint("/accounts/{0}/memberships/{1}".format(CONFIG_DATA['account_id'], CONFIG_DATA['member_id']))
         client.execute_request()
+
+    @staticmethod
+    def create_epic():
+        """
+        Static method for create a epic in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/epics".format(STORED_ID['project_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"name": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        STORED_ID['epic_id'] = response.json()['id']
