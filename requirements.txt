@@ -1,5 +1,6 @@
-behave
 compare
 pyyaml
 requests
+jsonschema
+behave
 pylint
