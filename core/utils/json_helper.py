@@ -2,7 +2,7 @@
 import json
 
 
-class JsonHelper(object):
+class JsonHelper:
     """Class of Json helper"""
 
     def __init__(self):

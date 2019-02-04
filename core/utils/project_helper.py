@@ -7,7 +7,7 @@ from definitions import STORED_ID
 from core.rest_client.request_manager import RequestManager
 
 
-class ProjectHelper(object):
+class ProjectHelper:
     """Project helper class"""
 
     def __init__(self):

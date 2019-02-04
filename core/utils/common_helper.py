@@ -11,7 +11,7 @@ from core.rest_client.request_manager import RequestManager
 CONFIG_DATA = yaml.load(open(ENV_YML))
 
 
-class CommonHelper(object):
+class CommonHelper:
     """Class Common Helper"""
 
     def __init__(self):

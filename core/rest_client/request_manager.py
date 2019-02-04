@@ -7,7 +7,7 @@ from definitions import ENV_YML
 CONFIG_DATA = yaml.load(open(ENV_YML))
 
 
-class RequestManager(object):
+class RequestManager:
     """Class that performs API requests."""
 
     def __init__(self):
