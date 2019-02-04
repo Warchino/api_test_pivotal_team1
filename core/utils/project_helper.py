@@ -34,7 +34,7 @@ class ProjectHelper:
         """
         client = RequestManager()
         client.set_method("DELETE")
-        client.set_endpoint("/projects/{0}".format(project_id))
+        client.set_endpoint("/projects/{0}".format(str(project_id)))
         client.execute_request()
 
     @staticmethod
