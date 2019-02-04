@@ -5,10 +5,10 @@ from behave import step, then
 from compare import expect
 from jsonschema import validate
 
-from definitions import SCHEMA_TODOLY
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
+from definitions import SCHEMA_TODOLY
 
 LOGGER = SingletonLogger().get_logger()
 
