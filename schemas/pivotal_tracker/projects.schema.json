@@ -1,0 +1,317 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "id",
+      "kind",
+      "name",
+      "version",
+      "iteration_length",
+      "week_start_day",
+      "point_scale",
+      "point_scale_is_custom",
+      "bugs_and_chores_are_estimatable",
+      "automatic_planning",
+      "enable_tasks",
+      "time_zone",
+      "velocity_averaged_over",
+      "number_of_done_iterations_to_show",
+      "has_google_domain",
+      "enable_incoming_emails",
+      "initial_velocity",
+      "public",
+      "atom_enabled",
+      "project_type",
+      "start_time",
+      "created_at",
+      "updated_at",
+      "account_id",
+      "current_iteration_number",
+      "enable_following"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          98
+        ]
+      },
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "project"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "Learn About the Force"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "version": {
+        "$id": "#/items/properties/version",
+        "type": "integer",
+        "title": "The Version Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "iteration_length": {
+        "$id": "#/items/properties/iteration_length",
+        "type": "integer",
+        "title": "The Iteration_length Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "week_start_day": {
+        "$id": "#/items/properties/week_start_day",
+        "type": "string",
+        "title": "The Week_start_day Schema",
+        "default": "",
+        "examples": [
+          "Monday"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "point_scale": {
+        "$id": "#/items/properties/point_scale",
+        "type": "string",
+        "title": "The Point_scale Schema",
+        "default": "",
+        "examples": [
+          "0,1,2,3"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "point_scale_is_custom": {
+        "$id": "#/items/properties/point_scale_is_custom",
+        "type": "boolean",
+        "title": "The Point_scale_is_custom Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "bugs_and_chores_are_estimatable": {
+        "$id": "#/items/properties/bugs_and_chores_are_estimatable",
+        "type": "boolean",
+        "title": "The Bugs_and_chores_are_estimatable Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "automatic_planning": {
+        "$id": "#/items/properties/automatic_planning",
+        "type": "boolean",
+        "title": "The Automatic_planning Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "enable_tasks": {
+        "$id": "#/items/properties/enable_tasks",
+        "type": "boolean",
+        "title": "The Enable_tasks Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "time_zone": {
+        "$id": "#/items/properties/time_zone",
+        "type": "object",
+        "title": "The Time_zone Schema",
+        "required": [
+          "kind",
+          "olson_name",
+          "offset"
+        ],
+        "properties": {
+          "kind": {
+            "$id": "#/items/properties/time_zone/properties/kind",
+            "type": "string",
+            "title": "The Kind Schema",
+            "default": "",
+            "examples": [
+              "time_zone"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "olson_name": {
+            "$id": "#/items/properties/time_zone/properties/olson_name",
+            "type": "string",
+            "title": "The Olson_name Schema",
+            "default": "",
+            "examples": [
+              "America/Los_Angeles"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "offset": {
+            "$id": "#/items/properties/time_zone/properties/offset",
+            "type": "string",
+            "title": "The Offset Schema",
+            "default": "",
+            "examples": [
+              "-08:00"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "velocity_averaged_over": {
+        "$id": "#/items/properties/velocity_averaged_over",
+        "type": "integer",
+        "title": "The Velocity_averaged_over Schema",
+        "default": 0,
+        "examples": [
+          3
+        ]
+      },
+      "number_of_done_iterations_to_show": {
+        "$id": "#/items/properties/number_of_done_iterations_to_show",
+        "type": "integer",
+        "title": "The Number_of_done_iterations_to_show Schema",
+        "default": 0,
+        "examples": [
+          4
+        ]
+      },
+      "has_google_domain": {
+        "$id": "#/items/properties/has_google_domain",
+        "type": "boolean",
+        "title": "The Has_google_domain Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "enable_incoming_emails": {
+        "$id": "#/items/properties/enable_incoming_emails",
+        "type": "boolean",
+        "title": "The Enable_incoming_emails Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "initial_velocity": {
+        "$id": "#/items/properties/initial_velocity",
+        "type": "integer",
+        "title": "The Initial_velocity Schema",
+        "default": 0,
+        "examples": [
+          10
+        ]
+      },
+      "public": {
+        "$id": "#/items/properties/public",
+        "type": "boolean",
+        "title": "The Public Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "atom_enabled": {
+        "$id": "#/items/properties/atom_enabled",
+        "type": "boolean",
+        "title": "The Atom_enabled Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "project_type": {
+        "$id": "#/items/properties/project_type",
+        "type": "string",
+        "title": "The Project_type Schema",
+        "default": "",
+        "examples": [
+          "private"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "start_time": {
+        "$id": "#/items/properties/start_time",
+        "type": "string",
+        "title": "The Start_time Schema",
+        "default": "",
+        "examples": [
+          "2019-01-29T12:00:05Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-29T12:00:10Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-29T12:00:15Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "account_id": {
+        "$id": "#/items/properties/account_id",
+        "type": "integer",
+        "title": "The Account_id Schema",
+        "default": 0,
+        "examples": [
+          100
+        ]
+      },
+      "current_iteration_number": {
+        "$id": "#/items/properties/current_iteration_number",
+        "type": "integer",
+        "title": "The Current_iteration_number Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "enable_following": {
+        "$id": "#/items/properties/enable_following",
+        "type": "boolean",
+        "title": "The Enable_following Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      }
+    }
+  }
+}
