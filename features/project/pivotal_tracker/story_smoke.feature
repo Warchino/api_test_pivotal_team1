@@ -7,7 +7,6 @@ Feature: Story Feature of pivotal tracker
     When I send the request
     Then I get a "200" status code as response
 
-  @create_story
   Scenario: Update an specific story
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
@@ -23,7 +22,6 @@ Feature: Story Feature of pivotal tracker
     When I send the request
     Then I get a "200" status code as response
 
-  @create_story
   Scenario: Delete an specific story
     Given I set up a "DELETE" request to "/projects/{project_id}/stories/{story_id}" endpoint
     When I send the request
