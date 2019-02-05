@@ -1,6 +1,7 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "The Root Schema",
+  "title": "Project Schema",
   "required": [
     "id",
     "kind",
@@ -36,7 +37,7 @@
       "title": "The Id Schema",
       "default": 0,
       "examples": [
-        2242582
+        2244450
       ]
     },
     "kind": {
@@ -47,17 +48,19 @@
       "examples": [
         "project"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "name": {
       "$id": "#/properties/name",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
       "title": "The Name Schema",
       "default": "",
       "examples": [
-        "First Project"
+        "pepe"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "version": {
       "$id": "#/properties/version",
@@ -65,7 +68,7 @@
       "title": "The Version Schema",
       "default": 0,
       "examples": [
-        3
+        1
       ]
     },
     "iteration_length": {
@@ -85,17 +88,19 @@
       "examples": [
         "Monday"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "point_scale": {
       "$id": "#/properties/point_scale",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
       "title": "The Point_scale Schema",
       "default": "",
       "examples": [
         "0,1,2,3"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "point_scale_is_custom": {
       "$id": "#/properties/point_scale_is_custom",
@@ -171,7 +176,7 @@
           "examples": [
             "-08:00"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^[-|+](\\d+:\\d+)$"
         }
       }
     },
@@ -246,7 +251,7 @@
       "examples": [
         "private"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "start_time": {
       "$id": "#/properties/start_time",
@@ -254,9 +259,9 @@
       "title": "The Start_time Schema",
       "default": "",
       "examples": [
-        "2019-01-28T08:00:00Z"
+        "2019-02-04T08:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "created_at": {
       "$id": "#/properties/created_at",
@@ -264,9 +269,9 @@
       "title": "The Created_at Schema",
       "default": "",
       "examples": [
-        "2019-01-31T12:03:09Z"
+        "2019-02-05T01:58:47Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "updated_at": {
       "$id": "#/properties/updated_at",
@@ -274,9 +279,9 @@
       "title": "The Updated_at Schema",
       "default": "",
       "examples": [
-        "2019-01-31T13:01:21Z"
+        "2019-02-05T01:58:47Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "account_id": {
       "$id": "#/properties/account_id",
