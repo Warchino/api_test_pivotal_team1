@@ -21,12 +21,9 @@ def before_scenario(context, scenario):
         CommonHelper.create_epic()
 
     if 'create_story' in scenario.tags:
-        ProjectHelper.create_project()
         CommonHelper.create_story()
 
     if 'create_task' in scenario.tags:
-        ProjectHelper.create_project()
-        CommonHelper.create_story()
         CommonHelper.create_task()
 
 
