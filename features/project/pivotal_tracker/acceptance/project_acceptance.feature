@@ -1,3 +1,4 @@
+@acceptance
 Feature: Project Acceptance Test
 
   @create_project
