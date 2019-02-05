@@ -6,11 +6,13 @@ from random import choices
 
 import yaml
 
+from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from definitions import ENV_YML
 from definitions import STORED_ID
 
 CONFIG_DATA = yaml.load(open(ENV_YML))
+LOGGER = SingletonLogger().get_logger()
 
 
 class CommonHelper:
@@ -77,3 +79,20 @@ class CommonHelper:
         client.set_body(json.dumps(body))
         response = client.execute_request()
         STORED_ID['epic_id'] = response.json()['id']
+
+    @staticmethod
+    def create_story():
+        """
+        Static method for create a story in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/stories".format(STORED_ID['project_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"name": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        try:
+            STORED_ID['story_id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())

@@ -1,3 +1,4 @@
+@smoke
 Feature: Add a member to an account and delete it
 
   @read_account @post_membership_account @delete_data
