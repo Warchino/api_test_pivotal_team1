@@ -86,7 +86,7 @@ def validation_sent_data(context):
         expect(sent_json[item]).to_equal(response[item])
 
 
-@step("I verify if was deleted")
+@step("I verify if the project was deleted")
 def step_impl(context):
     """
     Verification if was deleted
