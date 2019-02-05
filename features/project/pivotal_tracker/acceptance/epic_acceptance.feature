@@ -25,4 +25,4 @@ Feature: Epic feature
     Given I set up a "DELETE" request to "/projects/{project_id}/epics/{epic_id}" endpoint
     When I send the request
     Then I get a "204" status code as response
-    And I verify if was deleted
+    And I verify if epic was deleted

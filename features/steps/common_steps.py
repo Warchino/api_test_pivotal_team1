@@ -98,7 +98,7 @@ def verify_deleted_project(context):
     expect(403).to_equal(response.status_code)
 
 
-@step("I verify if was deleted")
+@step(u'I verify if epic was deleted')
 def verify_deletion(context):
     """
     Verification if the resources was deleted
