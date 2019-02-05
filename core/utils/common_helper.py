@@ -1,14 +1,18 @@
 """Module helper for the project"""
 import json
 import re
+import string
+from random import choices
 
 import yaml
 
+from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from definitions import ENV_YML
 from definitions import STORED_ID
 
 CONFIG_DATA = yaml.load(open(ENV_YML))
+LOGGER = SingletonLogger().get_logger()
 
 
 class CommonHelper:
@@ -29,7 +33,6 @@ class CommonHelper:
         read = re.findall('{(.+?)}', endpoint)
         result = endpoint
         for item in read:
-            print(str(STORED_ID[item]))
             result = re.sub('{(%s)}' % item, str(STORED_ID[item]), result)
         return result
 
@@ -40,15 +43,6 @@ class CommonHelper:
         """
         STORED_ID["account_id"] = CONFIG_DATA['account_id']
         STORED_ID["member_id"] = CONFIG_DATA['member_id']
-
-    @staticmethod
-    def get_story_id():
-        """
-        Static method for read and account from environment.yml
-        """
-        STORED_ID["stories_id"] = CONFIG_DATA['stories_id']
-        STORED_ID["task_id"] = CONFIG_DATA['task_id']
-        STORED_ID["project_id"] = CONFIG_DATA['project_id']
 
     @staticmethod
     def add_member():
@@ -71,3 +65,51 @@ class CommonHelper:
         client.set_method("DELETE")
         client.set_endpoint("/accounts/{0}/memberships/{1}".format(CONFIG_DATA['account_id'], CONFIG_DATA['member_id']))
         client.execute_request()
+
+    @staticmethod
+    def create_epic():
+        """
+        Static method for create a epic in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/epics".format(STORED_ID['project_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"name": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        STORED_ID['epic_id'] = response.json()['id']
+
+    @staticmethod
+    def create_story():
+        """
+        Static method for create a story in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/stories".format(STORED_ID['project_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"name": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        try:
+            STORED_ID['story_id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())
+
+    @staticmethod
+    def create_task():
+        """
+        Static method for create a task in a story in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/stories/{1}/tasks".format(STORED_ID['project_id'], STORED_ID['story_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"description": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        try:
+            STORED_ID['task_id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())
