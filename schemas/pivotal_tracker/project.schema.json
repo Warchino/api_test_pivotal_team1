@@ -53,6 +53,8 @@
     "name": {
       "$id": "#/properties/name",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
       "title": "The Name Schema",
       "default": "",
       "examples": [
@@ -91,6 +93,8 @@
     "point_scale": {
       "$id": "#/properties/point_scale",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
       "title": "The Point_scale Schema",
       "default": "",
       "examples": [
@@ -172,7 +176,7 @@
           "examples": [
             "-08:00"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^[-|+](\\d+:\\d+)$"
         }
       }
     },
@@ -257,7 +261,7 @@
       "examples": [
         "2019-02-04T08:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "created_at": {
       "$id": "#/properties/created_at",
@@ -267,7 +271,7 @@
       "examples": [
         "2019-02-05T01:58:47Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "updated_at": {
       "$id": "#/properties/updated_at",
@@ -277,7 +281,7 @@
       "examples": [
         "2019-02-05T01:58:47Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "account_id": {
       "$id": "#/properties/account_id",
