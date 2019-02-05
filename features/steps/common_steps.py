@@ -61,14 +61,15 @@ def set_up_body(context):
     context.client.set_body(json.dumps(body))
 
 
-@step(u'I validate with "{project}" schema')
-def schema_validation(context, project):
+@step(u'I validate with "{read_schema}" schema')
+def schema_validation(context, read_schema):
     """
     Schema validation.
+    :param read_schema: Input schema
     :param context: Input context.
     """
     LOGGER.info("Validation of the schema")
-    with open(SCHEMA_PIVOTAL[project]) as schema_creation:
+    with open(SCHEMA_PIVOTAL[read_schema]) as schema_creation:
         schema = json.load(schema_creation)
     validate(instance=context.response.json(), schema=schema)
 
@@ -86,7 +87,7 @@ def validation_sent_data(context):
         expect(sent_json[item]).to_equal(response[item])
 
 
-@step("I verify if was deleted")
+@step("I verify if the project was deleted")
 def step_impl(context):
     """
     Verification if was deleted
