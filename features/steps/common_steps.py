@@ -77,7 +77,7 @@ def schema_validation(context, read_schema):
 @step("I verify the sent data")
 def validation_sent_data(context):
     """
-    Veridication of the sent data.
+    Verification of the sent data.
     :param context: Input context.
     """
     LOGGER.info("Validation of sent data")
@@ -88,11 +88,22 @@ def validation_sent_data(context):
 
 
 @step("I verify if the project was deleted")
-def step_impl(context):
+def verify_deleted_project(context):
     """
     Verification if was deleted
     """
-    LOGGER.info("Validation of delete request")
+    LOGGER.info("Validation of delete project")
     context.client.set_method('GET')
     response = context.client.execute_request()
     expect(403).to_equal(response.status_code)
+
+
+@step(u'I verify if epic was deleted')
+def verify_deletion(context):
+    """
+    Verification if the resources was deleted
+    """
+    LOGGER.info("Validation of delete resource")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(404).to_equal(response.status_code)
