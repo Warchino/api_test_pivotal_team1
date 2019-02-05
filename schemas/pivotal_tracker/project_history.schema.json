@@ -3,47 +3,10 @@
   "type": "object",
   "title": "Project History Schema",
   "required": [
-    "data",
     "header",
     "kind"
   ],
   "properties": {
-    "data": {
-      "$id": "#/properties/data",
-      "type": "array",
-      "title": "The Data Schema",
-      "items": {
-        "$id": "#/properties/data/items",
-        "type": "array",
-        "title": "The Items Schema",
-        "items": {
-          "$id": "#/properties/data/items/items",
-          "type": "string",
-          "title": "The Items Schema",
-          "default": "",
-          "examples": [
-            "2019-01-24",
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            4,
-            4,
-            6,
-            18,
-            10,
-            16,
-            32,
-            28
-          ],
-          "pattern": "^('.+?')|([0-9]*.)|(\\d+\\.\\d+)$"
-        }
-      }
-    },
     "header": {
       "$id": "#/properties/header",
       "type": "array",
