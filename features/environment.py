@@ -20,6 +20,9 @@ def before_scenario(context, scenario):
     if 'create_epic' in scenario.tags:
         CommonHelper.create_epic()
 
+    if 'create_story' in scenario.tags:
+        CommonHelper.create_story()
+
 
 def after_scenario(context, scenario):
     """
