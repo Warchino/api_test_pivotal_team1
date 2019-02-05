@@ -17,11 +17,8 @@ def before_scenario(context, scenario):
     if 'read_account' in scenario.tags:
         CommonHelper.get_account_id()
 
-    if 'create_epic' in scenario.tags:
-        CommonHelper.create_epic()
-
-    if 'create_story' in scenario.tags:
-        CommonHelper.create_story()
+    if 'read_story' in scenario.tags:
+        CommonHelper.get_story_id()
 
 
 def after_scenario(context, scenario):
