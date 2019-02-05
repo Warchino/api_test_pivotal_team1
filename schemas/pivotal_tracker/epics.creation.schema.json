@@ -23,7 +23,7 @@
       "examples": [
         "2019-01-29T12:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "id": {
       "$id": "#/properties/id",
@@ -88,6 +88,8 @@
         "name": {
           "$id": "#/properties/label/properties/name",
           "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
           "title": "The Name Schema",
           "default": "",
           "examples": [
@@ -103,7 +105,7 @@
           "examples": [
             "2019-01-29T12:00:00Z"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
         },
         "updated_at": {
           "$id": "#/properties/label/properties/updated_at",
@@ -113,13 +115,15 @@
           "examples": [
             "2019-01-29T12:00:00Z"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
         }
       }
     },
     "name": {
       "$id": "#/properties/name",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 5000,
       "title": "The Name Schema",
       "default": "",
       "examples": [
@@ -144,7 +148,7 @@
       "examples": [
         "2019-01-29T12:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "url": {
       "$id": "#/properties/url",
