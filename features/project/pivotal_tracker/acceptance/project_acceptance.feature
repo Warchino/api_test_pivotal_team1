@@ -8,7 +8,6 @@ Feature: Project Acceptance Test
     Then I get a "200" status code as response
     And I validate with "Project" schema
 
-  @create_project
   Scenario: Put an specified project
     Given I set up a "PUT" request to "/projects/{project_id}" endpoint
     And I set up the data
@@ -22,7 +21,6 @@ Feature: Project Acceptance Test
     And I validate with "Project" schema
     And I verify the sent data
 
-  @create_project
   Scenario: Delete an specified project
     Given I set up a "DELETE" request to "/projects/{project_id}" endpoint
     When I send the request
