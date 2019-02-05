@@ -1,49 +1,38 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "created_at",
-    "description",
     "id",
     "kind",
-    "label",
-    "name",
-    "project_id",
+    "created_at",
     "updated_at",
-    "url"
+    "project_id",
+    "name",
+    "url",
+    "label"
   ],
   "properties": {
-    "created_at": {
-      "$id": "#/properties/created_at",
-      "type": "string",
-      "title": "The Created_at Schema",
-      "default": "",
-      "examples": [
-        "2019-01-29T12:00:00Z"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "description": {
-      "$id": "#/properties/description",
-      "type": "string",
-      "title": "The Description Schema",
-      "default": "",
-      "examples": [
-        "Identify the systems and eliminate the rebel scum."
-      ],
-      "pattern": "^(.*)$"
-    },
     "id": {
       "$id": "#/properties/id",
       "type": "integer",
       "title": "The Id Schema",
       "default": 0,
       "examples": [
-        5
+        4218584
       ]
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000,
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "New description for test"
+      ],
+      "pattern": "^(.*)$"
     },
     "kind": {
       "$id": "#/properties/kind",
@@ -53,7 +42,58 @@
       "examples": [
         "epic"
       ],
+      "pattern": "^epic?$"
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-05T15:55:56Z"
+      ],
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The Updated_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-05T15:55:56Z"
+      ],
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+    },
+    "project_id": {
+      "$id": "#/properties/project_id",
+      "type": "integer",
+      "title": "The Project_id Schema",
+      "default": 0,
+      "examples": [
+        2245289
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000,
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "naLcaD"
+      ],
       "pattern": "^(.*)$"
+    },
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "The Url Schema",
+      "default": "",
+      "examples": [
+        "https://www.pivotaltracker.com/epic/show/4218584"
+      ],
+      "pattern": "^(.+?)$"
     },
     "label": {
       "$id": "#/properties/label",
@@ -74,7 +114,7 @@
           "title": "The Id Schema",
           "default": 0,
           "examples": [
-            2008
+            20965650
           ]
         },
         "project_id": {
@@ -83,7 +123,7 @@
           "title": "The Project_id Schema",
           "default": 0,
           "examples": [
-            99
+            2245289
           ]
         },
         "kind": {
@@ -94,15 +134,17 @@
           "examples": [
             "label"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^label?$"
         },
         "name": {
           "$id": "#/properties/label/properties/name",
           "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
           "title": "The Name Schema",
           "default": "",
           "examples": [
-            "rebel bases"
+            "nalcad"
           ],
           "pattern": "^(.*)$"
         },
@@ -112,9 +154,9 @@
           "title": "The Created_at Schema",
           "default": "",
           "examples": [
-            "2019-01-29T12:00:00Z"
+            "2019-02-05T15:55:56Z"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
         },
         "updated_at": {
           "$id": "#/properties/label/properties/updated_at",
@@ -122,50 +164,11 @@
           "title": "The Updated_at Schema",
           "default": "",
           "examples": [
-            "2019-01-29T12:00:00Z"
+            "2019-02-05T15:55:56Z"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
         }
       }
-    },
-    "name": {
-      "$id": "#/properties/name",
-      "type": "string",
-      "title": "The Name Schema",
-      "default": "",
-      "examples": [
-        "Rebel Home Worlds"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "project_id": {
-      "$id": "#/properties/project_id",
-      "type": "integer",
-      "title": "The Project_id Schema",
-      "default": 0,
-      "examples": [
-        99
-      ]
-    },
-    "updated_at": {
-      "$id": "#/properties/updated_at",
-      "type": "string",
-      "title": "The Updated_at Schema",
-      "default": "",
-      "examples": [
-        "2019-01-29T12:00:00Z"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "url": {
-      "$id": "#/properties/url",
-      "type": "string",
-      "title": "The Url Schema",
-      "default": "",
-      "examples": [
-        "http://localhost/epic/show/5"
-      ],
-      "pattern": "^(.*)$"
     }
   }
 }

@@ -96,3 +96,14 @@ def step_impl(context):
     context.client.set_method('GET')
     response = context.client.execute_request()
     expect(403).to_equal(response.status_code)
+
+
+@step("I verify if was deleted")
+def step_impl(context):
+    """
+    Verification if the resources was deleted
+    """
+    LOGGER.info("Validation of delete resource")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(404).to_equal(response.status_code)
