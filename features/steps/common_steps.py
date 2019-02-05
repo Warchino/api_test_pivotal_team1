@@ -8,7 +8,7 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
-from definitions import SCHEMA_TODOLY
+from definitions import SCHEMA_PIVOTAL
 
 LOGGER = SingletonLogger().get_logger()
 
@@ -61,14 +61,14 @@ def set_up_body(context):
     context.client.set_body(json.dumps(body))
 
 
-@step("I validate with an schema")
-def schema_validation(context):
+@step(u'I validate with "{project}" schema')
+def schema_validation(context, project):
     """
     Schema validation.
     :param context: Input context.
     """
     LOGGER.info("Validation of the schema")
-    with open(SCHEMA_TODOLY['Creation']) as schema_creation:
+    with open(SCHEMA_PIVOTAL[project]) as schema_creation:
         schema = json.load(schema_creation)
     validate(instance=context.response.json(), schema=schema)
 
@@ -84,3 +84,14 @@ def validation_sent_data(context):
     for item in sent_json:
         response = context.response.json()
         expect(sent_json[item]).to_equal(response[item])
+
+
+@step("I verify if was deleted")
+def step_impl(context):
+    """
+    Verification if was deleted
+    """
+    LOGGER.info("Validation of delete request")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(403).to_equal(response.status_code)
