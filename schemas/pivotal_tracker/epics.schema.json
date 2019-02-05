@@ -1,0 +1,165 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "id",
+      "kind",
+      "created_at",
+      "updated_at",
+      "project_id",
+      "name",
+      "url",
+      "label"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          555
+        ]
+      },
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "epic"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-29T12:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-29T12:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "project_id": {
+        "$id": "#/items/properties/project_id",
+        "type": "integer",
+        "title": "The Project_id Schema",
+        "default": 0,
+        "examples": [
+          99
+        ]
+      },
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "Sanitation"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "url": {
+        "$id": "#/items/properties/url",
+        "type": "string",
+        "title": "The Url Schema",
+        "default": "",
+        "examples": [
+          "http://localhost/epic/show/555"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "label": {
+        "$id": "#/items/properties/label",
+        "type": "object",
+        "title": "The Label Schema",
+        "required": [
+          "id",
+          "project_id",
+          "kind",
+          "name",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/items/properties/label/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "default": 0,
+            "examples": [
+              2017
+            ]
+          },
+          "project_id": {
+            "$id": "#/items/properties/label/properties/project_id",
+            "type": "integer",
+            "title": "The Project_id Schema",
+            "default": 0,
+            "examples": [
+              99
+            ]
+          },
+          "kind": {
+            "$id": "#/items/properties/label/properties/kind",
+            "type": "string",
+            "title": "The Kind Schema",
+            "default": "",
+            "examples": [
+              "label"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/items/properties/label/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "sanitation"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "created_at": {
+            "$id": "#/items/properties/label/properties/created_at",
+            "type": "string",
+            "title": "The Created_at Schema",
+            "default": "",
+            "examples": [
+              "2019-01-29T12:00:00Z"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "updated_at": {
+            "$id": "#/items/properties/label/properties/updated_at",
+            "type": "string",
+            "title": "The Updated_at Schema",
+            "default": "",
+            "examples": [
+              "2019-01-29T12:00:00Z"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
