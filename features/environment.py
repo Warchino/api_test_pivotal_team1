@@ -23,6 +23,9 @@ def before_scenario(context, scenario):
     if 'create_story' in scenario.tags:
         CommonHelper.create_story()
 
+    if 'create_task' in scenario.tags:
+        CommonHelper.create_task()
+
 
 def after_scenario(context, scenario):
     """
