@@ -42,7 +42,7 @@
       "examples": [
         "epic"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     },
     "label": {
       "$id": "#/properties/label",
@@ -158,7 +158,7 @@
       "examples": [
         "http://localhost/epic/show/2100"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(.+?)$"
     }
   }
 }

@@ -34,7 +34,7 @@
         "examples": [
           "epic"
         ],
-        "pattern": "^(.*)$"
+        "pattern": "^(.+?)$"
       },
       "created_at": {
         "$id": "#/items/properties/created_at",
@@ -85,7 +85,7 @@
         "examples": [
           "http://localhost/epic/show/555"
         ],
-        "pattern": "^(.*)$"
+        "pattern": "^(.+?)$"
       },
       "label": {
         "$id": "#/items/properties/label",
@@ -126,7 +126,7 @@
             "examples": [
               "label"
             ],
-            "pattern": "^(.*)$"
+            "pattern": "^(.+?)$"
           },
           "name": {
             "$id": "#/items/properties/label/properties/name",
