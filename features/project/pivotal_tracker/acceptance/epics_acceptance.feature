@@ -1,7 +1,7 @@
 @acceptance
 Feature: Epics acceptance
 
-  @create_project
+  @create_project @delete_project
   Scenario: Create a new epic
     Given I set up a "POST" request to "/projects/{project_id}/epics" endpoint
     And I set up the data
@@ -15,6 +15,7 @@ Feature: Epics acceptance
     And I validate with "Epics-Creation" schema
     And I verify the sent data
 
+  @create_project @delete_project
   Scenario: Get an specified project
     Given I set up a "GET" request to "/projects/{project_id}/epics" endpoint
     When I send the request

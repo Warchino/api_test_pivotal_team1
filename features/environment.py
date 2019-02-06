@@ -35,6 +35,12 @@ def after_scenario(context, scenario):
     if 'delete_data' in scenario.tags:
         CommonHelper.delete_member()
 
+    if 'read_project' in scenario.tags:
+        ProjectHelper.read_project(context.response)
+
+    if 'delete_project' in scenario.tags:
+        ProjectHelper.delete_stored_project()
+
 
 def after_all(context):
     """
