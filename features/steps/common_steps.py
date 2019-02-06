@@ -87,6 +87,22 @@ def validation_sent_data(context):
         expect(sent_json[item]).to_equal(response[item])
 
 
+@step("I verify the sent data of member")
+def validation_sent_data(context):
+    """
+    Verification of the sent data of member.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent data of member")
+    sent_json = json.loads(context.sent_data)
+    for it in sent_json:
+        response = context.response.json()
+        if it == "person_id":
+            expect(sent_json[it]).to_equal(response["person"]["id"])
+        else:
+            expect(sent_json[it]).to_equal(response["person"][it])
+
+
 @step("I verify if the project was deleted")
 def verify_deleted_project(context):
     """
