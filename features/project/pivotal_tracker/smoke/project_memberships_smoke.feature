@@ -1,12 +1,13 @@
 @smoke
 Feature: Get Project Memberships
 
-  @create_project
+  @create_project @delete_project
   Scenario: Get Project Memberships
     Given I set up a "GET" request to "/projects/{project_id}/memberships" endpoint
     When I send the request
     Then I get a "200" status code as response
 
+  @create_project @delete_project
   Scenario: Post an specified project integration
     Given I set up a "POST" request to "/projects/{project_id}/memberships" endpoint
     And I set up the data
