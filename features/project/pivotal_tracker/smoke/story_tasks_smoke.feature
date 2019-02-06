@@ -1,3 +1,4 @@
+@smoke
 Feature: Get the tasks of an specific story of an specific project.
 
   @create_project @create_story
