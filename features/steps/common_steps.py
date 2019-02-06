@@ -71,7 +71,12 @@ def schema_validation(context, read_schema):
     LOGGER.info("Validation of the schema")
     with open(SCHEMA_PIVOTAL[read_schema]) as schema_creation:
         schema = json.load(schema_creation)
-    validate(instance=context.response.json(), schema=schema)
+    schema_response = context.response.json()
+    if type(schema_response) is list:
+        for schema_elem in schema_response:
+            validate(instance=schema_elem, schema=schema)
+    else:
+        validate(instance=context.response.json(), schema=schema)
 
 
 @step("I verify the sent data")
