@@ -54,3 +54,21 @@ class ProjectHelper:
                 ProjectHelper.delete_project(project["id"])
             except TypeError:
                 LOGGER.info(project)
+
+    @staticmethod
+    def read_project(response):
+        """
+        Static method who read all projects
+        :param response: Request response
+        """
+        STORED_ID['project_id'] = response.json()["id"]
+
+    @staticmethod
+    def delete_stored_project():
+        """
+        Static method for delete a project.
+        """
+        client = RequestManager()
+        client.set_method("DELETE")
+        client.set_endpoint("/projects/{0}".format(STORED_ID['project_id']))
+        client.execute_request()
