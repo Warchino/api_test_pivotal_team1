@@ -29,7 +29,7 @@ Feature: Account acceptance test
     And I validate with "Memberships_account" schema
 
   @read_account @post_membership_account @delete_data
-  Scenario: Get a memberships of an account
+  Scenario: Get a membership of an account
     Given I set up a "GET" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     When I send the request
     Then I get a "200" status code as response
