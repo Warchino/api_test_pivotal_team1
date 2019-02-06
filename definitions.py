@@ -13,6 +13,7 @@ SCHEMA_PIVOTAL = {
     'Epic': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epic.schema.json'),
     'Webhooks': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/webhooks.schema.json'),
     'Webhooks-Creation': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/webhooks.creation.schema.json'),
+    'Project-Integrations': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/projects.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
