@@ -20,3 +20,16 @@ def set_up_header(context):
     for key in header.keys():
         data[key] = header[key]
     context.client.set_headers(data)
+
+
+@step("I validate the date data of project history")
+def validate_date_data(context):
+    """
+    Step for verify the data of the request.
+    """
+    response = context.response.json()
+    information = response['data']
+    for data_array in information:
+        for data in data_array:
+            if not isinstance(data, str) and not isinstance(data, int) and not isinstance(data, float):
+                raise AssertionError
