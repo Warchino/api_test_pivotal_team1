@@ -127,6 +127,6 @@ class CommonHelper:
         client.set_body(json.dumps(body))
         response = client.execute_request()
         try:
-            STORED_ID['id'] = response.json()['id']
+            STORED_ID['webhook_id'] = response.json()['id']
         except KeyError:
             LOGGER.info(response.json())
