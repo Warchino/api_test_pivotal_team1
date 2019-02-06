@@ -95,12 +95,12 @@ def validation_sent_data(context):
     """
     LOGGER.info("Validation of sent data of member")
     sent_json = json.loads(context.sent_data)
-    for it in sent_json:
+    for item in sent_json:
         response = context.response.json()
-        if it == "person_id":
-            expect(sent_json[it]).to_equal(response["person"]["id"])
+        if item == "person_id":
+            expect(sent_json[item]).to_equal(response["person"]["id"])
         else:
-            expect(sent_json[it]).to_equal(response["person"][it])
+            expect(sent_json[item]).to_equal(response["person"][item])
 
 
 @step("I verify if the project was deleted")
