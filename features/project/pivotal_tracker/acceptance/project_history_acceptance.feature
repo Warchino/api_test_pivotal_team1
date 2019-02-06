@@ -1,7 +1,7 @@
 @acceptance
 Feature: Project History Acceptance Test
 
-  @create_project
+  @create_project @delete_project
   Scenario: Get an specified project history
     Given I set up a "GET" request to "/projects/{project_id}/history/days" endpoint
     When I send the request
