@@ -7,3 +7,4 @@ Feature: Project History Acceptance Test
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Project-History" schema
+    And I validate the date data of project history
