@@ -15,6 +15,8 @@ SCHEMA_PIVOTAL = {
     'Epics': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epics.schema.json'),
     'Epics-Creation': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epics.creation.schema.json'),
     'Epic': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epic.schema.json'),
+    'Webhooks': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/webhooks.schema.json'),
+    'Webhooks-Creation': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/webhooks.creation.schema.json'),
     'Project-Integrations': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/projects.schema.json'),
     'Story': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/story.schema.json'),
     'Project-History': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_history.schema.json')

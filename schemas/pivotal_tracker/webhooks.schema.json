@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "kind",
+      "id",
+      "project_id",
+      "webhook_url",
+      "webhook_version",
+      "created_at",
+      "updated_at"
+    ],
+    "properties": {
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "webhook"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          27
+        ]
+      },
+      "project_id": {
+        "$id": "#/items/properties/project_id",
+        "type": "integer",
+        "title": "The Project_id Schema",
+        "default": 0,
+        "examples": [
+          99
+        ]
+      },
+      "webhook_url": {
+        "$id": "#/items/properties/webhook_url",
+        "type": "string",
+        "title": "The Webhook_url Schema",
+        "default": "",
+        "examples": [
+          "http://example.com:3000/test_postbin"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "webhook_version": {
+        "$id": "#/items/properties/webhook_version",
+        "type": "string",
+        "title": "The Webhook_version Schema",
+        "default": "",
+        "examples": [
+          "v5"
+        ],
+        "pattern": "^(v5)?$"
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2019-02-05T12:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2019-02-05T12:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}
