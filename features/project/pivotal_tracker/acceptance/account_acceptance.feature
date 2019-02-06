@@ -13,7 +13,7 @@ Feature: Account acceptance test
     Then I get a "200" status code as response
     And I validate with "Accounts" schema
 
-  Scenario: Get accounts summary
+  Scenario: Get summary of account
     Given I set up a "GET" request to "/account_summaries?with_permission=project_creation" endpoint
     When I send the request
     Then I get a "200" status code as response
