@@ -1,0 +1,101 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "kind",
+      "id",
+      "name",
+      "plan",
+      "status",
+      "created_at",
+      "updated_at"
+    ],
+    "properties": {
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "account"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          1080889
+        ]
+      },
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "Untitled"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "plan": {
+        "$id": "#/items/properties/plan",
+        "type": "string",
+        "title": "The Plan Schema",
+        "default": "",
+        "examples": [
+          "Free"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "status": {
+        "$id": "#/items/properties/status",
+        "type": "string",
+        "title": "The Status Schema",
+        "default": "",
+        "examples": [
+          "active"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "days_left": {
+        "$id": "#/items/properties/days_left",
+        "type": "integer",
+        "title": "The Days_left Schema",
+        "default": 0,
+        "examples": [
+          23
+        ]
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-30T02:46:37Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2019-01-30T02:46:37Z"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}
