@@ -88,7 +88,7 @@ def validation_sent_data(context):
 
 
 @step("I verify the sent data of member")
-def validation_sent_data(context):
+def validation_sent_data_member(context):
     """
     Verification of the sent data of member.
     :param context: Input context.
