@@ -107,3 +107,30 @@ def verify_deletion(context):
     context.client.set_method('GET')
     response = context.client.execute_request()
     expect(404).to_equal(response.status_code)
+
+
+@step("I verify the sent labels")
+def validation_label(context):
+    """
+    Verification of the sent label.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent labels")
+    sent_json = json.loads(context.sent_data)
+    for item in sent_json:
+        count = 0
+        for child in sent_json[item]:
+            response = context.response.json()
+            expect(child['name']).to_equal(response[item][count]['name'])
+            count += 1
+
+
+@step(u'I verify if item was deleted')
+def verify_item_deleted(context):
+    """
+    Verification if the resources was deleted
+    """
+    LOGGER.info("Validation of delete resource")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(404).to_equal(response.status_code)
