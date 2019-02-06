@@ -26,6 +26,8 @@ def before_scenario(context, scenario):
     if 'create_task' in scenario.tags:
         CommonHelper.create_task()
 
+    if 'create_webhooks' in scenario.tags:
+        CommonHelper.create_webhooks()
 
 def after_scenario(context, scenario):
     """

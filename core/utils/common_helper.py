@@ -113,3 +113,20 @@ class CommonHelper:
             STORED_ID['task_id'] = response.json()['id']
         except KeyError:
             LOGGER.info(response.json())
+
+    @staticmethod
+    def create_webhooks():
+        """
+        Static method for create a webhooks in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/webhooks".format(STORED_ID['project_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"webhook_url": 'https://' + name, "webhook_version": 'v5'}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        try:
+            STORED_ID['id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())
