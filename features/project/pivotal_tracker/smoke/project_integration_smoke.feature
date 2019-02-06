@@ -1,7 +1,7 @@
 @smoke
 Feature: Project Integration
 
-  @create_project
+  @create_project @delete_project
   Scenario: Get an specified project integration
     Given I set up a "GET" request to "/projects/{project_id}/integrations" endpoint
     When I send the request
