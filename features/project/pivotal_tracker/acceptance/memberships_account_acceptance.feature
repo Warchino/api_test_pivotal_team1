@@ -1,3 +1,4 @@
+@acceptance
 Feature: Manage memberships in an account
 
   @read_account @delete_data
