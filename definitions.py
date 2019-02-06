@@ -15,6 +15,8 @@ SCHEMA_PIVOTAL = {
     'Epics': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epics.schema.json'),
     'Epics-Creation': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epics.creation.schema.json'),
     'Epic': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epic.schema.json'),
+    'Project-Integrations': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/projects.schema.json'),
+    'Story': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/story.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
