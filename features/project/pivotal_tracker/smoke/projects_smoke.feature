@@ -7,7 +7,7 @@ Feature: Get Projects
     When I send the request
     Then I get a "200" status code as response
 
-  @delete_project
+  @read_project @delete_project
   Scenario: Put an specified project
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data

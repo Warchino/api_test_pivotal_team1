@@ -8,7 +8,7 @@ Feature: Get Projects
     Then I get a "200" status code as response
     And I validate with "Projects" schema
 
-  @delete_project
+  @read_project @delete_project
   Scenario: Post an specified project
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
