@@ -8,7 +8,7 @@ Feature: Project History
     Then I get a "200" status code as response
 
   @create_project @delete_project
-  Scenario: Get project snapshot
+  Scenario: Get snapshot of a project
     Given I set up a "GET" request to "/projects/{project_id}/history/snapshots" endpoint
     When I send the request
     Then I get a "200" status code as response
