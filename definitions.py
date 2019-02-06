@@ -6,6 +6,7 @@ ENV_YML = os.path.join(ROOT_DIR, 'environment.yml')
 
 SCHEMA_PIVOTAL = {
     'Account': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/account.schema.json'),
+    'Accounts': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/accounts.schema.json'),
     'Project': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project.schema.json'),
     'Projects': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/projects.schema.json'),
     'Epics': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/epics.schema.json'),

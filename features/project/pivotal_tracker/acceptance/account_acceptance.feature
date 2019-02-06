@@ -11,4 +11,4 @@ Feature: Account acceptance test
     Given I set up a "GET" request to "/accounts" endpoint
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Account" schema
+    And I validate with "Accounts" schema
