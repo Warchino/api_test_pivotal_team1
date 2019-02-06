@@ -7,7 +7,7 @@ Feature: Manage memberships in an account
     When I set up the data
     """
       {
-        "email": "NeatImp@mailinator.com"
+        "email": "CoolShoe@mailinator.com"
       }
     """  
     And I send the request
