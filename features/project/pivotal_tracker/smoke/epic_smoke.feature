@@ -25,7 +25,7 @@ Feature: Epic feature
     When I send the request
     Then I get a "204" status code as response
 
-  @create_epic
+  @create_project @create_epic @delete_project
   Scenario: Get specified epic
     Given I set up a "GET" request to "/epics/{epic_id}" endpoint
     When I send the request
