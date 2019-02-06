@@ -1,3 +1,4 @@
+@acceptancegit 
 Feature: Account acceptance test
 
   @read_account
