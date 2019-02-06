@@ -96,3 +96,20 @@ class CommonHelper:
             STORED_ID['story_id'] = response.json()['id']
         except KeyError:
             LOGGER.info(response.json())
+
+    @staticmethod
+    def create_task():
+        """
+        Static method for create a task in a story in to a project.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/stories/{1}/tasks".format(STORED_ID['project_id'], STORED_ID['story_id']))
+        name = "".join(choices(string.ascii_letters, k=6))
+        body = {"description": name}
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        try:
+            STORED_ID['task_id'] = response.json()['id']
+        except KeyError:
+            LOGGER.info(response.json())

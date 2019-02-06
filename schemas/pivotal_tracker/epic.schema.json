@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "id",
+    "kind",
+    "created_at",
+    "updated_at",
+    "project_id",
+    "name",
+    "url",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "default": 0,
+      "examples": [
+        4218584
+      ]
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000,
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "New description for test"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "epic"
+      ],
+      "pattern": "^epic?$"
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-05T15:55:56Z"
+      ],
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The Updated_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-05T15:55:56Z"
+      ],
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+    },
+    "project_id": {
+      "$id": "#/properties/project_id",
+      "type": "integer",
+      "title": "The Project_id Schema",
+      "default": 0,
+      "examples": [
+        2245289
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000,
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "naLcaD"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "The Url Schema",
+      "default": "",
+      "examples": [
+        "https://www.pivotaltracker.com/epic/show/4218584"
+      ],
+      "pattern": "^(.+?)$"
+    },
+    "label": {
+      "$id": "#/properties/label",
+      "type": "object",
+      "title": "The Label Schema",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "name",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/label/properties/id",
+          "type": "integer",
+          "title": "The Id Schema",
+          "default": 0,
+          "examples": [
+            20965650
+          ]
+        },
+        "project_id": {
+          "$id": "#/properties/label/properties/project_id",
+          "type": "integer",
+          "title": "The Project_id Schema",
+          "default": 0,
+          "examples": [
+            2245289
+          ]
+        },
+        "kind": {
+          "$id": "#/properties/label/properties/kind",
+          "type": "string",
+          "title": "The Kind Schema",
+          "default": "",
+          "examples": [
+            "label"
+          ],
+          "pattern": "^label?$"
+        },
+        "name": {
+          "$id": "#/properties/label/properties/name",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "nalcad"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "created_at": {
+          "$id": "#/properties/label/properties/created_at",
+          "type": "string",
+          "title": "The Created_at Schema",
+          "default": "",
+          "examples": [
+            "2019-02-05T15:55:56Z"
+          ],
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+        },
+        "updated_at": {
+          "$id": "#/properties/label/properties/updated_at",
+          "type": "string",
+          "title": "The Updated_at Schema",
+          "default": "",
+          "examples": [
+            "2019-02-05T15:55:56Z"
+          ],
+          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+        }
+      }
+    }
+  }
+}
