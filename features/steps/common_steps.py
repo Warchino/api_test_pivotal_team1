@@ -150,3 +150,15 @@ def verify_item_deleted(context):
     context.client.set_method('GET')
     response = context.client.execute_request()
     expect(404).to_equal(response.status_code)
+
+
+@step("I verify all the stories with the schema")
+def verify_all_stories(context):
+    """
+    Verification of all stories.
+    """
+    LOGGER.info("Validation of stories by an schema")
+    with open(SCHEMA_PIVOTAL["Story"]) as schema_creation:
+        schema = json.load(schema_creation)
+    for story in context.response.json():
+        validate(instance=story, schema=schema)
