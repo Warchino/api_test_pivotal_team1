@@ -99,6 +99,8 @@ def validation_sent_data_member(context):
         response = context.response.json()
         if item == "person_id":
             expect(sent_json[item]).to_equal(response["person"]["id"])
+        elif item in response:
+            expect(sent_json[item]).to_equal(response[item])
         else:
             expect(sent_json[item]).to_equal(response["person"][item])
 
