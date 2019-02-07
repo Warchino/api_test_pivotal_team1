@@ -13,7 +13,7 @@ Feature: Add a member to an account and delete it
     When I send the request
     Then I get a "200" status code as response
 
-  @read_account @post_membership_account @delete_data
+  @read_account @post_membership_account
   Scenario: Delete a member from an account
     Given I set up a "DELETE" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     When I send the request
