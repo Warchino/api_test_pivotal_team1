@@ -57,14 +57,13 @@ class CommonHelper:
         client.execute_request()
 
     @staticmethod
-    def delete_member(response):
+    def delete_member():
         """
         Static method for delete a member.
         """
-        resp_dic = response.json()
         client = RequestManager()
         client.set_method("DELETE")
-        client.set_endpoint("/accounts/{0}/memberships/{1}".format(CONFIG_DATA['account_id'], resp_dic["person"]["id"]))
+        client.set_endpoint("/accounts/{0}/memberships/{1}".format(CONFIG_DATA['account_id'], CONFIG_DATA['member_id']))
         client.execute_request()
 
     @staticmethod
