@@ -177,4 +177,5 @@ def validation_sent_data_membership(context):
         if item == "role":
             expect(sent_json[item]).to_equal(response[item])
         else:
-            expect(sent_json[item]).to_equal(response["person"]["id"] if item == "person_id" else response["person"][item])
+            expect(sent_json[item]).to_equal(response["person"]["id"] if item == "person_id"
+                                             else response["person"][item])
