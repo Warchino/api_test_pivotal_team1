@@ -165,7 +165,7 @@ def verify_all_stories(context):
 
 
 @step("I verify the sent data of membership")
-def validation_sent_data_member(context):
+def validation_sent_data_membership(context):
     """
     Verification of the sent data of membership of project.
     :param context: Input context.
