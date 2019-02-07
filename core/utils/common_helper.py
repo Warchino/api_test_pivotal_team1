@@ -98,6 +98,21 @@ class CommonHelper:
             LOGGER.info(response.json())
 
     @staticmethod
+    def update_story():
+        """
+        Static method for update data of a story in to a project.
+        """
+        client = RequestManager()
+        client.set_method("PUT")
+        client.set_endpoint("/projects/{0}/stories/{1}".format(STORED_ID['project_id'], STORED_ID['story_id']))
+        groups_list = ["scheduled", "unscheduled", "current"]
+        current_state_list = ["accepted", "delivered", "finished", "started",
+                              "rejected", "planned", "unstarted", "unscheduled"]
+        body = {"group": choices(groups_list), "current_state": choices(current_state_list)}
+        client.set_body(json.dumps(body))
+        client.execute_request()
+
+    @staticmethod
     def create_task():
         """
         Static method for create a task in a story in to a project.

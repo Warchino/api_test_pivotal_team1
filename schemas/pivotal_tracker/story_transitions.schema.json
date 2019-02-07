@@ -1,0 +1,89 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "kind",
+      "state",
+      "story_id",
+      "project_id",
+      "project_version",
+      "occurred_at",
+      "performed_by_id"
+    ],
+    "properties": {
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "story_transition"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "state": {
+        "$id": "#/items/properties/state",
+        "type": "string",
+        "title": "The State Schema",
+        "default": "",
+        "examples": [
+          "unstarted"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "story_id": {
+        "$id": "#/items/properties/story_id",
+        "type": "integer",
+        "title": "The Story_id Schema",
+        "default": 0,
+        "examples": [
+          163780630
+        ]
+      },
+      "project_id": {
+        "$id": "#/items/properties/project_id",
+        "type": "integer",
+        "title": "The Project_id Schema",
+        "default": 0,
+        "examples": [
+          2252183
+        ]
+      },
+      "project_version": {
+        "$id": "#/items/properties/project_version",
+        "type": "integer",
+        "title": "The Project_version Schema",
+        "default": 0,
+        "examples": [
+          14
+        ]
+      },
+      "occurred_at": {
+        "$id": "#/items/properties/occurred_at",
+        "type": "string",
+        "title": "The Occurred_at Schema",
+        "default": "",
+        "examples": [
+          "2019-02-07T04:48:28Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "performed_by_id": {
+        "$id": "#/items/properties/performed_by_id",
+        "type": "integer",
+        "title": "The Performed_by_id Schema",
+        "default": 0,
+        "examples": [
+          3143263
+        ]
+      }
+    }
+  }
+}
