@@ -22,6 +22,7 @@ SCHEMA_PIVOTAL = {
     'Project-History': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_history.schema.json'),
     'Tasks': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/tasks.schema.json'),
     'Task': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/task.schema.json'),
+    'Story-Transitions': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/story_transitions.schema.json'),
     'Project-Memberships': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_membership.schema.json'),
     'Project-Memberships-Creation': os.path.join(ROOT_DIR,
                                                  'schemas/pivotal_tracker/project_memberships_creation.schema.json')
