@@ -29,6 +29,9 @@ def before_scenario(context, scenario):
     if 'create_webhooks' in scenario.tags:
         CommonHelper.create_webhooks()
 
+    if 'create_memberships_project' in scenario.tags:
+        CommonHelper.create_memberships_project()
+
 
 def after_scenario(context, scenario):
     """

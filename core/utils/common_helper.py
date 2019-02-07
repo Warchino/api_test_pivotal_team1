@@ -130,3 +130,15 @@ class CommonHelper:
             STORED_ID['webhook_id'] = response.json()['id']
         except KeyError:
             LOGGER.info(response.json())
+
+    @staticmethod
+    def create_memberships_project():
+        """
+        Static method for add a member.
+        """
+        client = RequestManager()
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/memberships".format(STORED_ID['project_id']))
+        body = {"person_id": CONFIG_DATA['member_id'], "role": 'member'}
+        client.set_body(json.dumps(body))
+        client.execute_request()
