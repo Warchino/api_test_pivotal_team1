@@ -162,3 +162,19 @@ def verify_all_stories(context):
         schema = json.load(schema_creation)
     for story in context.response.json():
         validate(instance=story, schema=schema)
+
+
+@step("I verify the sent data of membership")
+def validation_sent_data_membership(context):
+    """
+    Verification of the sent data of membership of project.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent data of membership ")
+    sent_json = json.loads(context.sent_data)
+    for item in sent_json:
+        response = context.response.json()
+        if item == "person_id":
+            expect(sent_json[item]).to_equal(response["person"]["id"])
+        else:
+            expect(sent_json[item]).to_equal(response[item])
