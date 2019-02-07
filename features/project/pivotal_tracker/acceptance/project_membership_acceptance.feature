@@ -10,7 +10,7 @@ Feature: Get memeberships of Project
 
 
   @create_project @delete_project
-  Scenario: Post an specified project integration
+  Scenario: Post memberships an specified project
     Given I set up a "POST" request to "/projects/{project_id}/memberships" endpoint
     And I set up the data
     """
@@ -22,4 +22,4 @@ Feature: Get memeberships of Project
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Project-Memberships-Creation" schema
-    #And I verify the sent data
+    And I verify the sent data of membership
