@@ -87,6 +87,22 @@ def validation_sent_data(context):
         expect(sent_json[item]).to_equal(response[item])
 
 
+@step("I verify the sent data of member")
+def validation_sent_data_member(context):
+    """
+    Verification of the sent data of member.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent data of member")
+    sent_json = json.loads(context.sent_data)
+    for item in sent_json:
+        response = context.response.json()
+        if item == "person_id":
+            expect(sent_json[item]).to_equal(response["person"]["id"])
+        else:
+            expect(sent_json[item]).to_equal(response["person"][item])
+
+
 @step("I verify if the project was deleted")
 def verify_deleted_project(context):
     """
@@ -134,3 +150,15 @@ def verify_item_deleted(context):
     context.client.set_method('GET')
     response = context.client.execute_request()
     expect(404).to_equal(response.status_code)
+
+
+@step("I verify all the stories with the schema")
+def verify_all_stories(context):
+    """
+    Verification of all stories.
+    """
+    LOGGER.info("Validation of stories by an schema")
+    with open(SCHEMA_PIVOTAL["Story"]) as schema_creation:
+        schema = json.load(schema_creation)
+    for story in context.response.json():
+        validate(instance=story, schema=schema)
