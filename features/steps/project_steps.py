@@ -2,6 +2,7 @@
 import json
 
 from behave import step
+from compare import expect
 
 from core.logger.singleton_logger import SingletonLogger
 
@@ -33,3 +34,21 @@ def validate_date_data(context):
         for data in data_array:
             if not isinstance(data, str) and not isinstance(data, int) and not isinstance(data, float):
                 raise AssertionError
+
+
+@step("I verify the sent project data")
+def verify_data_project(context):
+    """
+    Verification of the sent data of the project
+    """
+    LOGGER.info("Validation of sent data of project")
+    sent_json = json.loads(context.sent_data)
+    response = context.response.json()
+    for item in sent_json:
+        if item == "time_zone":
+            if 'olson_name' in sent_json[item]:
+                expect(sent_json[item]['olson_name']).to_equal(response["time_zone"]["olson_name"])
+            if 'offset' in sent_json[item]:
+                expect(sent_json[item]['offset']).to_equal(response["time_zone"]["offset"])
+        else:
+            expect(sent_json[item]).to_equal(response[item])
