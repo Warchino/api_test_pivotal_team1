@@ -184,7 +184,7 @@ def validation_sent_data_membership(context):
 
 
 @step("I verify the sent data of membership by email")
-def validation_sent_data_membership_by_email(context):
+def validation_data_membership_email(context):
     """
     Verification of the sent data of membership of project.
     :param context: Input context.
