@@ -174,10 +174,29 @@ def validation_sent_data_membership(context):
     """
     LOGGER.info("Validation of sent data of membership ")
     sent_json = json.loads(context.sent_data)
+    response = context.response.json()
     for item in sent_json:
-        response = context.response.json()
         if item == "role":
             expect(sent_json[item]).to_equal(response[item])
         else:
             expect(sent_json[item]).to_equal(response["person"]["id"] if item == "person_id"
                                              else response["person"][item])
+
+
+@step("I verify the sent data of membership by email")
+def val_data_membership_email(context):
+    """
+    Verification of the sent data of membership of project.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent data of membership ")
+    sent_json = json.loads(context.sent_data)
+    response = context.response.json()
+
+    for item in sent_json:
+        if item == "role":
+            expect(sent_json[item]).to_equal(response[item])
+        elif item == "email":
+            expect(sent_json[item]).to_equal(response["person"]["email"])
+        else:
+            expect(sent_json[item]).to_equal(response["person"][item])
