@@ -43,8 +43,8 @@ def verify_data_project(context):
     """
     LOGGER.info("Validation of sent data of project")
     sent_json = json.loads(context.sent_data)
+    response = context.response.json()
     for item in sent_json:
-        response = context.response.json()
         if item == "time_zone":
             if 'olson_name' in sent_json[item]:
                 expect(sent_json[item]['olson_name']).to_equal(response["time_zone"]["olson_name"])
