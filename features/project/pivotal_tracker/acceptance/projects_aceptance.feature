@@ -1,7 +1,7 @@
 @acceptance
 Feature: Get Projects
 
-  @create_project
+  @create_project @delete_project
   Scenario: Get Projects
     Given I set up a "GET" request to "/projects" endpoint
     When I send the request
