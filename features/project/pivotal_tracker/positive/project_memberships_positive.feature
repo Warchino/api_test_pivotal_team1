@@ -2,7 +2,7 @@
 Feature: Get memberships of Project
 
   @create_project @delete_project
-  Scenario Outline: Post memberships an specified project whit  person_id
+  Scenario Outline: Post memberships an specified project with  person_id
     Given I set up a "POST" request to "/projects/{project_id}/memberships" endpoint
     And I set up the data
     """
@@ -22,7 +22,7 @@ Feature: Get memberships of Project
 
 
   @create_project @delete_project
-  Scenario Outline: Post memberships an specified project whit email
+  Scenario Outline: Post memberships an specified project with email
     Given I set up a "POST" request to "/projects/{project_id}/memberships" endpoint
     And I set up the data
     """
