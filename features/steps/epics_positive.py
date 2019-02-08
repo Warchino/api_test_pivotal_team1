@@ -4,9 +4,9 @@ import json
 from behave import step, use_step_matcher
 from compare import expect
 
-use_step_matcher("re")
-
 from core.logger.singleton_logger import SingletonLogger
+
+use_step_matcher("re")
 
 LOGGER = SingletonLogger().get_logger()
 
