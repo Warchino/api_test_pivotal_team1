@@ -1,5 +1,5 @@
 @positive
-Feature: Get memeberships of Project
+Feature: Get memberships of Project
 
   @create_project @delete_project
   Scenario: Post memberships an specified project

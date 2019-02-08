@@ -174,8 +174,8 @@ def validation_sent_data_membership(context):
     """
     LOGGER.info("Validation of sent data of membership ")
     sent_json = json.loads(context.sent_data)
+    response = context.response.json()
     for item in sent_json:
-        response = context.response.json()
         if item == "role":
             expect(sent_json[item]).to_equal(response[item])
         else:
@@ -191,10 +191,12 @@ def val_data_membership_email(context):
     """
     LOGGER.info("Validation of sent data of membership ")
     sent_json = json.loads(context.sent_data)
+    response = context.response.json()
+
     for item in sent_json:
-        response = context.response.json()
         if item == "role":
             expect(sent_json[item]).to_equal(response[item])
+        elif item == "email":
+            expect(sent_json[item]).to_equal(response["person"]["email"])
         else:
-            expect(sent_json[item]).to_equal(response["person"]["email"] if item == "email"
-                                             else response["person"][item])
+            expect(sent_json[item]).to_equal(response["person"][item])
