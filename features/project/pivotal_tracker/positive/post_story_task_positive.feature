@@ -1,3 +1,4 @@
+@positive
 Feature: Positive story task tests
 
   @create_project @create_story @delete_project
