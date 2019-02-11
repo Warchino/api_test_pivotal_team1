@@ -82,8 +82,8 @@ def set_up(context):
     Setting the data.
     :param context: Input context.
     """
-    for ind in range(len(STORY_STATE)):
-        expect(STORY_STATE[ind]).to_equal(context.response.json()[ind].get('state'))
+    for count, value in enumerate(STORY_STATE):
+        expect(value).to_equal(context.response.json()[count].get('state'))
     STORY_STATE.clear()
 
 
