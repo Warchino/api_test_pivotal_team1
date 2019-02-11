@@ -1,4 +1,4 @@
-@acceptance
+@positive
 Feature: Create a new story in a project
 
   @create_project @delete_project
