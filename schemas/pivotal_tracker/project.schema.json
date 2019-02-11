@@ -1,4 +1,48 @@
 {
+  "definitions": {
+    "time_zone": {
+      "$id": "#/properties/time_zone",
+      "type": "object",
+      "title": "The Time_zone Schema",
+      "required": [
+        "kind",
+        "olson_name",
+        "offset"
+      ],
+      "properties": {
+        "kind": {
+          "$id": "#/properties/time_zone/properties/kind",
+          "type": "string",
+          "title": "The Kind Schema",
+          "default": "",
+          "examples": [
+            "time_zone"
+          ],
+          "pattern": "^(time_zone)$"
+        },
+        "olson_name": {
+          "$id": "#/properties/time_zone/properties/olson_name",
+          "type": "string",
+          "title": "The Olson_name Schema",
+          "default": "",
+          "examples": [
+            "America/Los_Angeles"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "offset": {
+          "$id": "#/properties/time_zone/properties/offset",
+          "type": "string",
+          "title": "The Offset Schema",
+          "default": "",
+          "examples": [
+            "-08:00"
+          ],
+          "pattern": "^[-|+](\\d+:\\d+)$"
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "title": "Project Schema",
@@ -139,46 +183,7 @@
       ]
     },
     "time_zone": {
-      "$id": "#/properties/time_zone",
-      "type": "object",
-      "title": "The Time_zone Schema",
-      "required": [
-        "kind",
-        "olson_name",
-        "offset"
-      ],
-      "properties": {
-        "kind": {
-          "$id": "#/properties/time_zone/properties/kind",
-          "type": "string",
-          "title": "The Kind Schema",
-          "default": "",
-          "examples": [
-            "time_zone"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "olson_name": {
-          "$id": "#/properties/time_zone/properties/olson_name",
-          "type": "string",
-          "title": "The Olson_name Schema",
-          "default": "",
-          "examples": [
-            "America/Los_Angeles"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "offset": {
-          "$id": "#/properties/time_zone/properties/offset",
-          "type": "string",
-          "title": "The Offset Schema",
-          "default": "",
-          "examples": [
-            "-08:00"
-          ],
-          "pattern": "^[-|+](\\d+:\\d+)$"
-        }
-      }
+      "$ref": "#/definitions/time_zone"
     },
     "velocity_averaged_over": {
       "$id": "#/properties/velocity_averaged_over",
