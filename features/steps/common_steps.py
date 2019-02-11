@@ -10,7 +10,6 @@ from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
 from definitions import ERROR_DICT
-from definitions import SCHEMA_PIVOTAL
 from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
 LOGGER = SingletonLogger().get_logger()
@@ -65,7 +64,7 @@ def set_up_body(context):
 
 
 @step(u'I set up the params')
-def set_up_body(context):
+def set_up_body_params(context):
     """
     Setting the data.
     :param context: Input context.
@@ -89,7 +88,7 @@ def set_up(context):
 
 
 @step(u'I compare quantity transitions')
-def send_request(context):
+def compare_quantity(context):
     """
     Send the request.
     :param context: Input context.
