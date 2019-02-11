@@ -50,10 +50,6 @@ def after_scenario(context, scenario):
     if 'delete_project' in scenario.tags:
         ProjectHelper.delete_stored_project()
 
-    if 'delete_all_projects' in scenario.tags:
-        ProjectHelper.delete_all_projects()
-
-
 
 def after_all(context):
     """

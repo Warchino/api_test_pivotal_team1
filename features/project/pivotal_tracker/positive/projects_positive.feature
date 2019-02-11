@@ -1,7 +1,7 @@
 @positive
 Feature: Projects Positive Test
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: create project name and iter
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
@@ -16,7 +16,7 @@ Feature: Projects Positive Test
     And I validate with "Project" schema
     And I verify the sent data
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: Update project point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
@@ -31,7 +31,7 @@ Feature: Projects Positive Test
     And I validate with "Project" schema
     And I verify the sent data
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: Update project boolean
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
@@ -48,7 +48,7 @@ Feature: Projects Positive Test
     And I validate with "Project" schema
     And I verify the sent data
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: Update project date
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
@@ -64,7 +64,7 @@ Feature: Projects Positive Test
     And I validate with "Project" schema
     And I verify the sent project data
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: Update different project
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
@@ -80,7 +80,7 @@ Feature: Projects Positive Test
     And I validate with "Project" schema
     And I verify the sent project data
 
-  @delete_all_projects
+  @read_project @delete_project
   Scenario: Update project type
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
