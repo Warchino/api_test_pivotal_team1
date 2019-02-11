@@ -1,3 +1,4 @@
+@positive
 Feature: Get transitions of an specific story
 
   @create_project @create_story @delete_project
