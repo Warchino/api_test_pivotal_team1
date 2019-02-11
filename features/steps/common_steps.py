@@ -8,7 +8,7 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
-from definitions import SCHEMA_PIVOTAL
+from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
 LOGGER = SingletonLogger().get_logger()
 
@@ -59,6 +59,39 @@ def set_up_body(context):
     context.sent_data = context.text
     body = json.loads(context.sent_data)
     context.client.set_body(json.dumps(body))
+
+
+@step(u'I set up the params')
+def set_up_body(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    LOGGER.info("Add Data to request")
+    context.sent_data = context.text
+    body = json.loads(context.sent_data)
+    STORY_STATE.append(body.get("current_state"))
+    context.client.set_body(json.dumps(body))
+
+
+@step(u'I compare states of transitions')
+def set_up(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    for ind in range(len(STORY_STATE)):
+        expect(STORY_STATE[ind]).to_equal(context.response.json()[ind].get('state'))
+    STORY_STATE.clear()
+
+
+@step(u'I compare quantity transitions')
+def send_request(context):
+    """
+    Send the request.
+    :param context: Input context.
+    """
+    expect(len(STORY_STATE)).to_equal(len(context.response.json()))
 
 
 @step(u'I validate with "{read_schema}" schema')

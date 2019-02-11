@@ -33,3 +33,5 @@ SCHEMA_TODOLY = {
 }
 
 STORED_ID = {}
+
+STORY_STATE = []
