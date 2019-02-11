@@ -47,7 +47,7 @@ ERROR_DICT = {
     "Duplicate-point": "You can't have duplicate point values",
     "ISO-date": "must be a date value represented as iso 8601 date",
     "Blank-label": "Please enter a name for the label.",
-    "Nonexistent-label": "Label with id=\d+ does not exist within this project",
+    "Nonexistent-label": "Label with id=\\d+ does not exist within this project",
     "Cant_move": "This epic can no longer be moved to that position"
 }
 
