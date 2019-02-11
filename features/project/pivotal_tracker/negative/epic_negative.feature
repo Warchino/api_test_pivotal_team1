@@ -1,5 +1,5 @@
 @negative
-Feature: Positive test of Epic feature
+Feature: Negative test of Epic feature
 
   @create_project @create_epic @delete_project
   Scenario: Update epic huge name
@@ -13,6 +13,7 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Long-extended_string" error
 
   @create_project @create_epic @delete_project
   Scenario: Update epic null name
@@ -26,6 +27,8 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Blank" error
+
 
   @create_project @create_epic @delete_project
   Scenario: Update epic int name
@@ -39,6 +42,7 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Should_be-extended_string" error
 
   @create_project @create_epic @delete_project
   Scenario: Update epic huge description
@@ -52,7 +56,7 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
-
+    And I validate the "Long-extended_string" error
 
   @create_project @create_epic @delete_project
   Scenario: Update epic null label
@@ -66,6 +70,7 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Blank-label" error
 
   @create_project @create_epic @delete_project @wip
   Scenario: Update epic int label
@@ -79,6 +84,7 @@ Feature: Positive test of Epic feature
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Blank-label" error
 
   @create_project @create_epic @delete_project @wip
   Scenario: Update epic wrong label

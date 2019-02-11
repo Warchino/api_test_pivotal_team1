@@ -48,50 +48,7 @@
       "examples": [
         ""
       ],
-      "oneOf": [
-        {
-          "pattern": "^This extended_string is too long: .+?$"
-        },
-        {
-          "pattern": "^This string is too long: .+?$"
-        },
-        {
-          "pattern": "'(.+?)' must be an extended_string"
-        },
-        {
-          "pattern": "'(.+?)' must be an string"
-        },
-        {
-          "pattern": "'(.+?)' must be an int"
-        },
-        {
-          "pattern": "^this endpoint requires at least one of the following parameters:.+?$"
-        },
-        {
-          "pattern": "can't be blank"
-        },
-        {
-          "pattern": "Projects require a point scale.This is not a valid custom point scale."
-        },
-        {
-          "pattern": "This is not a valid custom point scale."
-        },
-        {
-          "pattern": "You can't have point values above 999"
-        },
-        {
-          "pattern": "You can't have duplicate point values"
-        },
-        {
-          "pattern": "must be a date value represented as iso 8601 date"
-        },
-        {
-          "pattern": "'(.+?)' must be one of: .+?"
-        },
-        {
-          "pattern": "Please enter a name for the label"
-        }
-      ]
+      "pattern": "^.+?$"
     },
     "requirement": {
       "$id": "#/properties/requirement",

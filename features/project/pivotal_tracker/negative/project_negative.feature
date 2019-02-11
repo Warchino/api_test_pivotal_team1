@@ -13,6 +13,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "At_least-one" error
 
   @create_project @delete_project
   Scenario: Update project name up to 51 character
@@ -26,6 +27,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Long-extended_string" error
 
   @create_project @delete_project
   Scenario: Update project name with empty string
@@ -39,6 +41,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Blank" error
 
   @create_project @delete_project
   Scenario: Update project null point scale
@@ -52,6 +55,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Null-point" error
 
   @create_project @delete_project
   Scenario: Update project char point scale
@@ -65,6 +69,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Invalid-point" error
 
   @create_project @delete_project
   Scenario: Update project huge point scale
@@ -78,6 +83,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Long-string" error
 
   @create_project @delete_project
   Scenario: Update project repeated point scale
@@ -91,6 +97,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Duplicate-point" error
 
   @create_project @delete_project
   Scenario: Update project huge description
@@ -104,6 +111,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Long-extended_string" error
 
   @create_project @delete_project
   Scenario: Update project huge profile content
@@ -118,6 +126,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Long-extended_string" error
 
   @create_project @delete_project @wip
   Scenario: Update project wrong time zone
@@ -131,6 +140,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "ISO-date" error
 
   @create_project @delete_project
   Scenario: Update project wrong date
@@ -144,6 +154,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "ISO-date" error
 
   @create_project @delete_project @wip
   Scenario: Update different wrong project TZ
@@ -157,6 +168,7 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Blank-label" error
 
   @create_project @delete_project
   Scenario: Update project wrong type
@@ -170,3 +182,4 @@ Feature: Project Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
+    And I validate the "Must_be-one" error
