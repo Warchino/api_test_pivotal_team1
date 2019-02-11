@@ -1,0 +1,100 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "The Error Schema",
+  "required": [
+    "code",
+    "kind",
+    "error",
+    "general_problem"
+  ],
+  "properties": {
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string",
+      "title": "The Code Schema",
+      "default": "",
+      "examples": [
+        "invalid_parameter"
+      ],
+      "pattern": "^(invalid_parameter)$"
+    },
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "error"
+      ],
+      "pattern": "^(error)$"
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": "string",
+      "title": "The Error Schema",
+      "default": "",
+      "examples": [
+        "One or more request parameters was missing or invalid."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "general_problem": {
+      "$id": "#/properties/general_problem",
+      "type": "string",
+      "title": "The General_problem Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^.+?$"
+    },
+    "requirement": {
+      "$id": "#/properties/requirement",
+      "type": "string",
+      "title": "The Requirement Schema",
+      "default": "",
+      "examples": [
+        "'name' parameter must be 50 characters or less."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "validation_errors": {
+      "$id": "#/properties/validation_errors",
+      "type": "array",
+      "title": "The Validation_errors Schema",
+      "items": {
+        "$id": "#/properties/validation_errors/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "field",
+          "problem"
+        ],
+        "properties": {
+          "field": {
+            "$id": "#/properties/validation_errors/items/properties/field",
+            "type": "string",
+            "title": "The Field Schema",
+            "default": "",
+            "examples": [
+              "name"
+            ],
+            "pattern": "^(.+?)$"
+          },
+          "problem": {
+            "$id": "#/properties/validation_errors/items/properties/problem",
+            "type": "string",
+            "title": "The Problem Schema",
+            "default": "",
+            "examples": [
+              "Name can't be blank"
+            ],
+            "pattern": "^(.+?)$"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@acceptance
+@positive
 Feature: Update task's information
 
   @create_project @create_story @create_task @delete_project

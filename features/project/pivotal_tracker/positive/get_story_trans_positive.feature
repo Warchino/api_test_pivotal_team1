@@ -1,6 +1,6 @@
 Feature: Get transitions of an specific story
 
-  @create_project @create_story
+  @create_project @create_story @delete_project
   Scenario: Check story's transitions
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the params
@@ -24,7 +24,7 @@ Feature: Get transitions of an specific story
     Then I compare quantity transitions
     Then I compare states of transitions
 
-  @create_project @create_story
+  @create_project @create_story @delete_project
   Scenario: Check more story's transitions
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the params

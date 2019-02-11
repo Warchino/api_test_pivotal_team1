@@ -1,4 +1,4 @@
-@acceptance
+@positive
 Feature: Modify configuration of member in an account
 
   @read_account @post_membership_account @delete_data

@@ -1,5 +1,6 @@
 """Module of Common steps"""
 import json
+import re
 
 from behave import step, then
 from compare import expect
@@ -8,6 +9,8 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
+from definitions import ERROR_DICT
+from definitions import SCHEMA_PIVOTAL
 from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
 LOGGER = SingletonLogger().get_logger()
@@ -233,3 +236,28 @@ def val_data_membership_email(context):
             expect(sent_json[item]).to_equal(response["person"]["email"])
         else:
             expect(sent_json[item]).to_equal(response["person"][item])
+
+
+@step("I verify the sent data url")
+def validation_sent_data_url(context):
+    """
+    Verification of the sent data.
+    :param context: Input context.
+    """
+    LOGGER.info("Validation of sent data")
+    sent_json = json.loads(context.sent_data)
+    response = context.response.json()
+    for item in sent_json:
+        if 'https://' not in sent_json['webhook_url']:
+            sent_json['webhook_url'] = 'https://' + sent_json['webhook_url']
+        expect(sent_json[item]).to_equal(response[item])
+
+
+@step('I validate the "{message}" error')
+def step_impl(context, message):
+    """
+    Validation of error message
+    """
+    response = context.response.json()
+    if not re.search(ERROR_DICT[message], response['general_problem']):
+        raise AssertionError

@@ -25,11 +25,30 @@ SCHEMA_PIVOTAL = {
     'Story-Transitions': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/story_transitions.schema.json'),
     'Project-Memberships': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_membership.schema.json'),
     'Project-Memberships-Creation': os.path.join(ROOT_DIR,
-                                                 'schemas/pivotal_tracker/project_memberships_creation.schema.json')
-
+                                                 'schemas/pivotal_tracker/project_memberships_creation.schema.json'),
+    'Error': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
+}
+
+ERROR_DICT = {
+    "Long-extended_string": "^This extended_string is too long: .+?$",
+    "Long-string": "^This string is too long: .+?$",
+    "Should_be-extended_string": "'(.+?)' must be an extended_string",
+    "Should_be-string": "'(.+?)' must be an string",
+    "At_least-one": "^this endpoint requires at least one of the following parameters:.+?$",
+    "Blank": "can't be blank",
+    "Must_be-one": "'(.+?)' must be one of: .+?",
+    "Must_be-integer": "'(.+?)' must be an integer value",
+    "Null-point": "Projects require a point scale., This is not a valid custom point scale.",
+    "Invalid-point": "This is not a valid custom point scale.",
+    "Over-point": "You can't have point values above 999",
+    "Duplicate-point": "You can't have duplicate point values",
+    "ISO-date": "must be a date value represented as iso 8601 date",
+    "Blank-label": "Please enter a name for the label.",
+    "Nonexistent-label": "Label with id=\\d+ does not exist within this project",
+    "Cant_move": "This epic can no longer be moved to that position"
 }
 
 STORED_ID = {}
