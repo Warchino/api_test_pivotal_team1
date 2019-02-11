@@ -214,6 +214,4 @@ def validation_sent_data_url(context):
     for item in sent_json:
         if 'https://' not in sent_json['webhook_url']:
             sent_json['webhook_url'] = 'https://' + sent_json['webhook_url']
-        else:
-            sent_json['webhook_url'] = sent_json['webhook_url']
         expect(sent_json[item]).to_equal(response[item])

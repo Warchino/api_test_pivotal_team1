@@ -13,10 +13,11 @@ Feature: post webhooks of Project
     """
     When I send the request
     Then I get a "200" status code as response
+    And I validate with "Webhooks-Creation" schema
     And I verify the sent data url
 
     Examples:
       | webhook_url              | webhook_version |
       | https://www.facebook.com | v5              |
-      | faceboo                  | v5              |
-      | 123456                  | v5              |
+      | facebook                 | v5              |
+      | 123456                   | v5              |
