@@ -121,84 +121,11 @@
       "type": "array",
       "title": "The Owner_ids Schema"
     },
-     "labels": {
-      "$id": "#/properties/labels",
+    "labels": {
       "type": "array",
       "title": "The Labels Schema",
       "items": {
-        "$id": "#/properties/labels/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "required": [
-          "kind",
-          "id",
-          "project_id",
-          "name",
-          "created_at",
-          "updated_at"
-        ],
-        "properties": {
-        "id": {
-          "$id": "#/properties/label/properties/id",
-          "type": "integer",
-          "title": "The Id Schema",
-          "default": 0,
-          "examples": [
-            20965650
-          ]
-        },
-        "project_id": {
-          "$id": "#/properties/label/properties/project_id",
-          "type": "integer",
-          "title": "The Project_id Schema",
-          "default": 0,
-          "examples": [
-            2245289
-          ]
-        },
-        "kind": {
-          "$id": "#/properties/label/properties/kind",
-          "type": "string",
-          "title": "The Kind Schema",
-          "default": "",
-          "examples": [
-            "label"
-          ],
-          "pattern": "^label?$"
-        },
-        "name": {
-          "$id": "#/properties/label/properties/name",
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 255,
-          "title": "The Name Schema",
-          "default": "",
-          "examples": [
-            "nalcad"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "created_at": {
-          "$id": "#/properties/label/properties/created_at",
-          "type": "string",
-          "title": "The Created_at Schema",
-          "default": "",
-          "examples": [
-            "2019-02-05T15:55:56Z"
-          ],
-          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
-        },
-        "updated_at": {
-          "$id": "#/properties/label/properties/updated_at",
-          "type": "string",
-          "title": "The Updated_at Schema",
-          "default": "",
-          "examples": [
-            "2019-02-05T15:55:56Z"
-          ],
-          "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
-        }
-      }
+        "$ref": "file:schemas/pivotal_tracker/label.schema.json"
       }
     }
   }
