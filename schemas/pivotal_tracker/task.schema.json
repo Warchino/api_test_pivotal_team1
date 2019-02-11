@@ -32,7 +32,7 @@
       "examples": [
         "2019-02-05T12:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "description": {
       "$id": "#/properties/description",
@@ -61,7 +61,7 @@
       "examples": [
         "task"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(task)$"
     },
     "position": {
       "$id": "#/properties/position",
@@ -89,7 +89,7 @@
       "examples": [
         "2019-02-05T12:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     }
   }
 }
