@@ -25,8 +25,8 @@ SCHEMA_PIVOTAL = {
     'Story-Transitions': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/story_transitions.schema.json'),
     'Project-Memberships': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_membership.schema.json'),
     'Project-Memberships-Creation': os.path.join(ROOT_DIR,
-                                                 'schemas/pivotal_tracker/project_memberships_creation.schema.json')
-
+                                                 'schemas/pivotal_tracker/project_memberships_creation.schema.json'),
+    'Error': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
