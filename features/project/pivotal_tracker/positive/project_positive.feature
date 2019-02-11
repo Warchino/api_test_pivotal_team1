@@ -1,4 +1,4 @@
-@acceptance
+@positive
 Feature: Project Acceptance Test
 
   @create_project @delete_project
