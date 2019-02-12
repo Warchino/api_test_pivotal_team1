@@ -10,6 +10,6 @@ install:
 script:
   - pylint --version
   - pylint --output-format=parseable api_test_pivotal_team1
-  - behave --no-capture --tags @smoke,@acceptance,@positive,@negative --tags ~@wip --summary
+  - behave --no-capture --tags @smoke,@acceptance,@positive,@negative --tags ~@wip --tags ~@bug --summary
 notifications:
   email: true

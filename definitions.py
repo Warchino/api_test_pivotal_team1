@@ -65,8 +65,8 @@ ERROR_DICT = {
     "Webhook_vesion_need": "webhook_version' must be one of: v5",
     "Can't_be_blank": "can't be blank, Webhook must be a valid URL.",
     "Valid_url": "One or more consistency checks failed on the supplied WebhookActivityChannel.",
-    "Must_be_https": "Webhook must use https."
-
+    "Must_be_https": "Webhook must use https.",
+    "Account-Access": "You aren't authorized to access the requested resource.",
 }
 
 STORED_ID = {}
