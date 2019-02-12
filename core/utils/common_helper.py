@@ -63,7 +63,7 @@ class CommonHelper:
         """
         client = RequestManager()
         client.set_method("DELETE")
-        member_id = response.json()['person']['id']
+        member_id = STORED_ID["member_id"]
         client.set_endpoint("/accounts/{0}/memberships/{1}".format(CONFIG_DATA['account_id'], member_id))
         client.execute_request()
 
