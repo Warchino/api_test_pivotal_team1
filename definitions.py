@@ -45,7 +45,10 @@ ERROR_DICT = {
     "Over-point": "You can't have point values above 999",
     "Duplicate-point": "You can't have duplicate point values",
     "ISO-date": "must be a date value represented as iso 8601 date",
-    "Blank-label": "Please enter a name for the label."
+    "Blank-label": "Please enter a name for the label.",
+    "one-parameter": "this endpoint requires the parameter: .+?$",
+    "negative-parameter": "You can't use negative values for points.",
+    "type-shared": "Cannot make a project's type shared on non-enterprise accounts"
 }
 
 STORED_ID = {}
