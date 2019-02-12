@@ -83,7 +83,7 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-string" error
 
-  Scenario: Update project repeated point scale
+  Scenario: Post project repeated point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -97,7 +97,7 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Duplicate-point" error
 
-   Scenario: Update project negative point scale
+   Scenario: Post project negative point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -111,7 +111,7 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "negative-parameter" error
 
-  Scenario: Update project huge description
+  Scenario: Post project huge description
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -126,7 +126,7 @@ Feature: Projects Negative Test
     And I validate the "Long-extended_string" error
 
   @create_project @delete_project
-  Scenario: Update project huge profile content
+  Scenario: Post project huge profile content
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -141,22 +141,22 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
-# @wip
-#  Scenario: Update project wrong time zone
-#    Given I set up a "POST" request to "/projects" endpoint
-#    And I set up the data
-#    """
-#    {
-#      "name":"test ",
-#      "time_zone": {"offset": "-03:1"}
-#    }
-#    """
-#    When I send the request
-#    Then I get a "400" status code as response
-#    And I validate with "Error" schema
-#    And I validate the "ISO-date" error
+ @wip
+  Scenario: Post project wrong time zone
+    Given I set up a "POST" request to "/projects" endpoint
+    And I set up the data
+    """
+    {
+      "name":"test ",
+      "time_zone": {"offset": "-03:1"}
+    }
+    """
+    When I send the request
+    Then I get a "400" status code as response
+    And I validate with "Error" schema
+    And I validate the "ISO-date" error
 
-  Scenario: Update project wrong date
+  Scenario: Post project wrong date
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -170,22 +170,22 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date" error
 
-#  @wip
-#  Scenario: Update different wrong project TZ
-#    Given I set up a "POST" request to "/projects" endpoint
-#    And I set up the data
-#    """
-#    {
-#      "name":"test",
-#      "time_zone": {"olson_name": "America/Ca"}
-#    }
-#    """
-#    When I send the request
-#    Then I get a "400" status code as response
-#    And I validate with "Error" schema
-#    And I validate the "Blank-label" error
+  @wip
+  Scenario: Post different wrong project TZ
+    Given I set up a "POST" request to "/projects" endpoint
+    And I set up the data
+    """
+    {
+      "name":"test",
+      "time_zone": {"olson_name": "America/Ca"}
+    }
+    """
+    When I send the request
+    Then I get a "400" status code as response
+    And I validate with "Error" schema
+    And I validate the "Blank-label" error
 
-  Scenario: Update project wrong type
+  Scenario: Post project wrong type
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -200,7 +200,7 @@ Feature: Projects Negative Test
     And I validate the "Must_be-one" error
 
 
-    Scenario: Update project wrong type
+    Scenario: Post project wrong type
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
