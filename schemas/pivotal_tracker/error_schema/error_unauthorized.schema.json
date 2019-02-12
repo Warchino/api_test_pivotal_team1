@@ -1,0 +1,74 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "code",
+    "kind",
+    "error",
+    "general_problem"
+  ],
+  "properties": {
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string",
+      "title": "The Code Schema",
+      "default": "",
+      "examples": [
+        "unauthorized_operation"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "error"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": "string",
+      "title": "The Error Schema",
+      "default": "",
+      "examples": [
+        "Authorization failure."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "general_problem": {
+      "$id": "#/properties/general_problem",
+      "type": "string",
+      "title": "The General_problem Schema",
+      "default": "",
+      "examples": [
+        "You do not have access to the destination project."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "requirement": {
+      "$id": "#/properties/requirement",
+      "type": "string",
+      "title": "The Requirement Schema",
+      "default": "",
+      "examples": [
+        "You must be a member of the destination project with the ability to modify; either a Member or Owner (not Viewer)."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "possible_fix": {
+      "$id": "#/properties/possible_fix",
+      "type": "string",
+      "title": "The Possible_fix Schema",
+      "default": "",
+      "examples": [
+        "Ask a destination project owner to become a member of that project.  Are the authentication credentials for this API request yours or another user's with less access?"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
