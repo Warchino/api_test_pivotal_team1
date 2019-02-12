@@ -1,3 +1,4 @@
+@negative
 Feature: Get account or list of accounts with non-existent ID
 
   @read_account
