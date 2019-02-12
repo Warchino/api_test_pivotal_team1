@@ -9,6 +9,7 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
+from core.utils.json_helper import JsonHelper
 from definitions import ERROR_DICT
 from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
@@ -38,6 +39,7 @@ def get_status_code(context, status_code):
     :param status_code: Input status code.
     """
     LOGGER.info("Validation Status Code")
+    JsonHelper.print_pretty_json(context.response.json())
     expect(int(status_code)).to_equal(context.response.status_code)
 
 
@@ -259,4 +261,14 @@ def step_impl(context, message):
     """
     response = context.response.json()
     if not re.search(ERROR_DICT[message], response['general_problem']):
+        raise AssertionError
+
+
+@step('I validate the "{message}" error by requirement')
+def step_impl_by_requirement(context, message):
+    """
+    Validation of error message
+    """
+    response = context.response.json()
+    if not re.search(ERROR_DICT[message], response['requirement']):
         raise AssertionError

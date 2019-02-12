@@ -60,7 +60,13 @@ ERROR_DICT = {
     "Accepted_date": "Only stories in accepted state may have accepted_at dates",
     "Deadline": "Deadline can only be set on releases.",
     "Future-created_at": "Story created_at cannot be in the future.",
-    "Project-Access": "You do not have access to the destination project."
+    "Project-Access": "You do not have access to the destination project.",
+    "Require-parameters": "this endpoint requires the parameters: .+?$",
+    "Webhook_vesion_need": "webhook_version' must be one of: v5",
+    "Can't_be_blank": "can't be blank, Webhook must be a valid URL.",
+    "Valid_url": "One or more consistency checks failed on the supplied WebhookActivityChannel.",
+    "Must_be_https": "Webhook must use https."
+
 }
 
 STORED_ID = {}
