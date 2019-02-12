@@ -57,7 +57,7 @@ class CommonHelper:
         client.execute_request()
 
     @staticmethod
-    def delete_member(response):
+    def delete_member():
         """
         Static method for delete a member.
         """
