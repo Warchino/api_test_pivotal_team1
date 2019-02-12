@@ -1,3 +1,4 @@
+@negative
 Feature: Get account or list of accounts with non-existent ID
 
   @read_account
@@ -9,7 +10,7 @@ Feature: Get account or list of accounts with non-existent ID
     And I validate the "Account-Access" error
 
   @read_account
-  Scenario: Try to access an account that doesn't belong to the profile
+  Scenario: Try to get summaries with wrong permissions
     Given I set up a "GET" request to "/account_summaries?with_permission=Project_CREATIO" endpoint
     When I send the request
     Then I get a "400" status code as response
