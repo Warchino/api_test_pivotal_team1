@@ -10,7 +10,7 @@ from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
 from definitions import ERROR_DICT
-from definitions import SCHEMA_PIVOTAL
+from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
 LOGGER = SingletonLogger().get_logger()
 
@@ -61,6 +61,39 @@ def set_up_body(context):
     context.sent_data = context.text
     body = json.loads(context.sent_data)
     context.client.set_body(json.dumps(body))
+
+
+@step(u'I set up the params')
+def set_up_body_params(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    LOGGER.info("Add Data to request")
+    context.sent_data = context.text
+    body = json.loads(context.sent_data)
+    STORY_STATE.append(body.get("current_state"))
+    context.client.set_body(json.dumps(body))
+
+
+@step(u'I compare states of transitions')
+def set_up(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    for count, value in enumerate(STORY_STATE):
+        expect(value).to_equal(context.response.json()[count].get('state'))
+    STORY_STATE.clear()
+
+
+@step(u'I compare quantity transitions')
+def compare_quantity(context):
+    """
+    Send the request.
+    :param context: Input context.
+    """
+    expect(len(STORY_STATE)).to_equal(len(context.response.json()))
 
 
 @step(u'I validate with "{read_schema}" schema')

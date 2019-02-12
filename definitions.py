@@ -52,3 +52,5 @@ ERROR_DICT = {
 }
 
 STORED_ID = {}
+
+STORY_STATE = []
