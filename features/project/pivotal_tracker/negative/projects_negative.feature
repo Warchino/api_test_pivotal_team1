@@ -13,7 +13,7 @@ Feature: Projects Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
-    And I validate the "one-parameter" error
+    And I validate the "One-parameter" error
 
   Scenario: Post project name up to 51 character
     Given I set up a "POST" request to "/projects" endpoint
@@ -39,7 +39,7 @@ Feature: Projects Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
-    And I validate the "one-parameter" error
+    And I validate the "One-parameter" error
 
   Scenario: Post project null point scale
     Given I set up a "POST" request to "/projects" endpoint
@@ -109,7 +109,7 @@ Feature: Projects Negative Test
     When I send the request
     Then I get a "400" status code as response
     And I validate with "Error" schema
-    And I validate the "negative-parameter" error
+    And I validate the "Negative-parameter" error
 
   Scenario: Post project huge description
     Given I set up a "POST" request to "/projects" endpoint
