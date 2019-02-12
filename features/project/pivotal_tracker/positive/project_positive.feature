@@ -105,3 +105,17 @@ Feature: Project Acceptance Test
     Then I get a "200" status code as response
     And I validate with "Project" schema
     And I verify the sent project data
+
+  @create_project @delete_project @bug
+  Scenario: Update project status
+    Given I set up a "PUT" request to "/projects/{project_id}" endpoint
+    And I set up the data
+    """
+    {
+      "status": "open"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent project data
