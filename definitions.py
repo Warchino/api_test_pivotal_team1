@@ -57,7 +57,8 @@ ERROR_DICT = {
     "Accepted_date": "Only stories in accepted state may have accepted_at dates",
     "Deadline": "Deadline can only be set on releases.",
     "Future-created_at": "Story created_at cannot be in the future.",
-    "Project-Access": "You do not have access to the destination project."
+    "Project-Access": "You do not have access to the destination project.",
+    "Account-Access": "You aren't authorized to access the requested resource.",
 }
 
 STORED_ID = {}
