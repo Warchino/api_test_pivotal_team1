@@ -9,7 +9,6 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
-from core.utils.json_helper import JsonHelper
 from definitions import ERROR_DICT
 from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
