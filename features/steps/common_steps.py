@@ -260,3 +260,13 @@ def step_impl(context, message):
     response = context.response.json()
     if not re.search(ERROR_DICT[message], response['general_problem']):
         raise AssertionError
+
+
+@step('I validate the "{message}" error by requirement')
+def step_impl_by_requirement(context, message):
+    """
+    Validation of error message
+    """
+    response = context.response.json()
+    if not re.search(ERROR_DICT[message], response['requirement']):
+        raise AssertionError
