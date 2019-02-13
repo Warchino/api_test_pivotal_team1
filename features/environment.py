@@ -42,7 +42,7 @@ def after_scenario(context, scenario):
     :param scenario: Input scenario.
     """
     if 'delete_data' in scenario.tags:
-        CommonHelper.delete_member(context.response)
+        CommonHelper.delete_member()
 
     if 'read_project' in scenario.tags:
         ProjectHelper.read_project(context.response)

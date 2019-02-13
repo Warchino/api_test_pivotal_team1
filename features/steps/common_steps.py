@@ -26,6 +26,7 @@ def set_up_request_to_endpoint(context, method, endpoint):
     LOGGER.info("Make the call")
     client = RequestManager()
     client.set_method(method)
+    print(CommonHelper.read_endpoint(endpoint))
     client.set_endpoint(CommonHelper.read_endpoint(endpoint))
     context.client = client
 
@@ -38,6 +39,7 @@ def get_status_code(context, status_code):
     :param status_code: Input status code.
     """
     LOGGER.info("Validation Status Code")
+    print(context.response.status_code)
     expect(int(status_code)).to_equal(context.response.status_code)
 
 
@@ -49,6 +51,7 @@ def send_request(context):
     """
     LOGGER.info("Execute request")
     context.response = context.client.execute_request()
+    print(context.response.status_code)
 
 
 @step(u'I set up the data')
@@ -78,6 +81,8 @@ def set_up_body_params(context):
         AUX_LIST.append(body.get("limit"))
     if "offset" in body:
         AUX_LIST.append(body.get("offset"))
+    if "current_state" in body:
+        STORY_STATE.append(body.get("current_state"))
     context.client.set_body(json.dumps(body))
 
 

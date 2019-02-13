@@ -26,7 +26,9 @@ SCHEMA_PIVOTAL = {
     'Project-Memberships': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/project_membership.schema.json'),
     'Project-Memberships-Creation': os.path.join(ROOT_DIR,
                                                  'schemas/pivotal_tracker/project_memberships_creation.schema.json'),
-    'Error': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error.schema.json')
+    'Error': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error.schema.json'),
+    'Authorization': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error_unauthorized.schema.json'),
+    'Error-Req': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error_requirement.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
@@ -41,14 +43,31 @@ ERROR_DICT = {
     "Blank": "can't be blank",
     "Must_be-one": "'(.+?)' must be one of: .+?",
     "Must_be-integer": "'(.+?)' must be an integer value",
+    "Must_be-float": "'(.+?)' must be an float value",
+    "Must_be-number": "'(.+?)' must be a number value",
     "Null-point": "Projects require a point scale., This is not a valid custom point scale.",
     "Invalid-point": "This is not a valid custom point scale.",
     "Over-point": "You can't have point values above 999",
     "Duplicate-point": "You can't have duplicate point values",
+    "ISO-date_milli": "'(.+?)' must be a time value represented as milliseconds/iso 8601 date",
     "ISO-date": "must be a date value represented as iso 8601 date",
     "Blank-label": "Please enter a name for the label.",
+    "One-parameter": "this endpoint requires the parameter: .+?$",
+    "Negative-parameter": "You can't use negative values for points.",
+    "type-shared": "Cannot make a project's type shared on non-enterprise accounts",
     "Nonexistent-label": "Label with id=\\d+ does not exist within this project",
-    "Cant_move": "This epic can no longer be moved to that position"
+    "Cant_move": "This epic can no longer be moved to that position",
+    "Require-parameter": "this endpoint requires the parameter: .+?",
+    "Accepted_date": "Only stories in accepted state may have accepted_at dates",
+    "Deadline": "Deadline can only be set on releases.",
+    "Future-created_at": "Story created_at cannot be in the future.",
+    "Project-Access": "You do not have access to the destination project.",
+    "Account-Access": "You aren't authorized to access the requested resource.",
+    "Non-String_Boolean": "'(.+?)' must be a non-string boolean true or false value",
+    "Member-Values": "One or more consistency checks failed on the supplied Person.",
+    "ID-email": "Do not send person_id with email, initials, or name in the same request.",
+    "Parameter": "this endpoint cannot accept the parameter: .+?.",
+    "Missing-Param": "this endpoint requires the parameter: .+?."
 }
 
 STORED_ID = {}
