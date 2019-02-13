@@ -115,7 +115,7 @@ def compare_quantity(context):
 
 
 @step(u'I compare {limit} with transitions')
-def compare_quantity(context, limit):
+def compare_quantity_limited(context, limit):
     """
     Send the request.
     :param context: Input context.
