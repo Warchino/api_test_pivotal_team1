@@ -97,6 +97,17 @@ def set_up(context):
     STORY_STATE.clear()
 
 
+@step(u'I compare states of limited transitions')
+def set_up(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    for count, value in enumerate(context.response.json()):
+        expect(value.get('state')).to_equal(STORY_STATE[count])
+    STORY_STATE.clear()
+
+
 @step(u'I compare quantity transitions')
 def compare_quantity(context):
     """
@@ -104,6 +115,15 @@ def compare_quantity(context):
     :param context: Input context.
     """
     expect(len(STORY_STATE)).to_equal(len(context.response.json()))
+
+
+@step(u'I compare {limit} with transitions')
+def compare_quantity(context, limit):
+    """
+    Send the request.
+    :param context: Input context.
+    """
+    expect(int(limit)).to_equal(len(context.response.json()))
 
 
 @step(u'I validate with "{read_schema}" schema')

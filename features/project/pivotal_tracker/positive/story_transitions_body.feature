@@ -1,7 +1,7 @@
 Feature: Get transitions of an specific story with body
 
   @create_project @create_story @delete_project
-  Scenario: Update more story's  with body request
+  Scenario Outline: Update more story's  with body request
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the params
     """
@@ -35,6 +35,14 @@ Feature: Get transitions of an specific story with body
     }
     """
     And I send the request
-    When I set up a "GET" request to "/projects/{project_id}/stories/{story_id}/transitions?limit=2" endpoint
+    When I set up a "GET" request to "/projects/{project_id}/stories/{story_id}/transitions?limit=<limit>" endpoint
     And I send the request
     Then I get a "200" status code as response
+    Then I compare <limit> with transitions
+    And I compare states of limited transitions
+
+    Examples:
+      | limit|
+      | 2    |
+      | 3    |
+      | 4    |
