@@ -90,3 +90,20 @@ Feature: Manage memberships in an account
     And I send the request
     Then I get a "200" status code as response
     And I verify the sent data of member
+
+  @read_account @delete_data @bug
+  Scenario: Add a member in an account with email, name, initials, admin privileges but not create project privileges
+    Given I set up a "POST" request to "/accounts/{account_id}/memberships" endpoint
+    When I set up the data
+    """
+      {
+        "email": "NeatImp@mailinator.com",
+        "name": "NeatImp",
+        "initials": "NE",
+        "created_at": "2019-02-14T04:25:15Z",
+        "project_creator": false,
+        "admin": true
+      }
+    """
+    And I send the request
+    Then I get a "200" status code as response
