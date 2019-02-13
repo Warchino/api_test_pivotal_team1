@@ -67,7 +67,11 @@ ERROR_DICT = {
     "Member-Values": "One or more consistency checks failed on the supplied Person.",
     "ID-email": "Do not send person_id with email, initials, or name in the same request.",
     "Parameter": "this endpoint cannot accept the parameter: .+?.",
-    "Missing-Param": "this endpoint requires the parameter: .+?."
+    "Missing-Param": "this endpoint requires the parameter: .+?.",
+    "Person_id_out_range": "Couldn't find Person with an out of range value for 'id'",
+    "Email_blank": "Email can't be blank., Name can't be blank",
+    "Already_member_project": ".+? is already a project member",
+    "Couldn't_find_Person": "Couldn't find Person with 'id'=.+?"
 }
 
 STORED_ID = {}
