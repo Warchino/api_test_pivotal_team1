@@ -225,7 +225,7 @@ Feature: Story Feature Negative Test
     And I validate with "Error" schema
     And I validate the "Deadline" error
 
-  @create_project @create_story @delete_project @wip
+  @create_project @create_story @delete_project @bug
   Scenario: Update a new story with correct int deadline but not accepted
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
@@ -240,7 +240,7 @@ Feature: Story Feature Negative Test
     And I validate the "Accepted_date" error
 
 
-  @create_project @create_story @delete_project @wip @bug
+  @create_project @create_story @delete_project @bug
   Scenario: Update a new story with wrong created_at
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
@@ -254,7 +254,7 @@ Feature: Story Feature Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date_milli" error
 
-  @create_project @create_story @delete_project @wip
+  @create_project @create_story @delete_project @bug
   Scenario: Update a new story with future created_at
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
@@ -268,7 +268,7 @@ Feature: Story Feature Negative Test
     And I validate with "Error" schema
     And I validate the "Future-created_at" error
 
-  @create_project @create_story @delete_project @wip
+  @create_project @create_story @delete_project @bug
   Scenario: Update a new story with correct past date created_at
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data

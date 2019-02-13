@@ -1,8 +1,8 @@
 @negative
 Feature: Projects Negative Test
 
-
-  Scenario: Post the project with nothing
+  @delete_project
+  Scenario: Create the project with nothing
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -15,7 +15,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "One-parameter" error
 
-  Scenario: Post project name up to 51 character
+  @delete_project
+  Scenario: Create project name up to 51 character
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -28,7 +29,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
-  Scenario: Post project name with empty string
+  @delete_project
+  Scenario: Create project name with empty string
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -41,7 +43,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "One-parameter" error
 
-  Scenario: Post project null point scale
+  @delete_project
+  Scenario: Create project null point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -55,7 +58,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Null-point" error
 
-  Scenario: Post project char point scale
+  @delete_project
+  Scenario: Create project char point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -69,7 +73,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Invalid-point" error
 
-  Scenario: Post project huge point scale
+  @delete_project
+  Scenario: Create project huge point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -83,7 +88,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-string" error
 
-  Scenario: Post project repeated point scale
+  @delete_project
+  Scenario: Create project repeated point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -97,7 +103,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Duplicate-point" error
 
-   Scenario: Post project negative point scale
+  @delete_project
+  Scenario: Create project negative point scale
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -111,7 +118,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Negative-parameter" error
 
-  Scenario: Post project huge description
+  @delete_project
+  Scenario: Create project huge description
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -125,8 +133,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
-  @create_project @delete_project
-  Scenario: Post project huge profile content
+  @delete_project
+  Scenario: Create project huge profile content
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -141,8 +149,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
- @wip
-  Scenario: Post project wrong time zone
+  @bug @delete_project
+  Scenario: Create project wrong time zone
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -156,7 +164,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date" error
 
-  Scenario: Post project wrong date
+  @delete_project
+  Scenario: Create project wrong date
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -170,8 +179,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date" error
 
-  @wip
-  Scenario: Post different wrong project TZ
+  @bug @delete_project
+  Scenario: Create different wrong project TZ
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -185,7 +194,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Blank-label" error
 
-  Scenario: Post project wrong type
+  @delete_project
+  Scenario: Create project wrong type
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
@@ -199,8 +209,8 @@ Feature: Projects Negative Test
     And I validate with "Error" schema
     And I validate the "Must_be-one" error
 
-
-    Scenario: Post project wrong type
+  @delete_project
+  Scenario: Create project wrong type
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """

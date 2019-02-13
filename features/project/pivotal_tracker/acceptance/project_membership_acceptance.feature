@@ -2,7 +2,7 @@
 Feature: Get memeberships of Project
 
   @create_project @create_memberships_project @delete_project
-  Scenario: Get memberships of specific Project
+  Scenario: Read memberships of specific Project
     Given I set up a "GET" request to "/projects/{project_id}/memberships" endpoint
     When I send the request
     Then I get a "200" status code as response
@@ -10,7 +10,7 @@ Feature: Get memeberships of Project
 
 
   @create_project @delete_project
-  Scenario: Post memberships an specified project
+  Scenario: Update memberships an specified project person_id and role
     Given I set up a "POST" request to "/projects/{project_id}/memberships" endpoint
     And I set up the data
     """
