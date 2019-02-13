@@ -62,6 +62,7 @@ ERROR_DICT = {
     "Future-created_at": "Story created_at cannot be in the future.",
     "Project-Access": "You do not have access to the destination project.",
     "Account-Access": "You aren't authorized to access the requested resource.",
+    "Non-String_Boolean": "'(.+?)' must be a non-string boolean true or false value"
 }
 
 STORED_ID = {}
