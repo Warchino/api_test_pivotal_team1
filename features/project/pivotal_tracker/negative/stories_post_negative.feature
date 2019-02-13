@@ -162,7 +162,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "Must_be-one" error
 
-  @create_project @delete_project  @wip
+  @create_project @delete_project  @bug
   Scenario: Create a new story with wrong estimate
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
@@ -177,7 +177,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "Must_be-one" error
 
-  @create_project @delete_project  @wip
+  @create_project @delete_project  @bug
   Scenario: Create a new story with null estimate
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
@@ -237,7 +237,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "Accepted_date" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new story with correct int accepted_at but not accepted
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
@@ -282,7 +282,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "Deadline" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new story with correct int deadline but not accepted
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
@@ -313,7 +313,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date_milli" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new story with future created_at
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
@@ -328,7 +328,7 @@ Feature: Stories Negative Test
     And I validate with "Error" schema
     And I validate the "Future-created_at" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new story with correct past date created_at
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data

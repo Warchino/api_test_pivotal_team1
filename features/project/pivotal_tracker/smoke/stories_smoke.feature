@@ -14,13 +14,13 @@ Feature: Stories
     Then I get a "200" status code as response
 
   @create_project @delete_project
-  Scenario: Get Stories
+  Scenario: Read Stories
     Given I set up a "GET" request to "/projects/{project_id}/stories" endpoint
     When I send the request
     Then I get a "200" status code as response
 
   @create_project @create_story @delete_project
-  Scenario: Get story specified in id parameter
+  Scenario: Read story specified in id parameter
     Given I set up a "GET" request to "/projects/{project_id}/stories/bulk?ids={story_id}" endpoint
     When I send the request
     Then I get a "200" status code as response

@@ -2,7 +2,7 @@
 Feature: Positive story task tests
 
   @create_project @create_story @delete_project
-  Scenario: Return a task created with description and completed
+  Scenario: Create a task with description and completed
     Given I set up a "POST" request to "/projects/{project_id}/stories/{story_id}/tasks" endpoint
     And I set up the data
     """
@@ -17,7 +17,7 @@ Feature: Positive story task tests
     And I verify the sent data
 
   @create_project @create_story @delete_project
-  Scenario: Return a task created with description and position
+  Scenario: Create a task with description and position
     Given I set up a "POST" request to "/projects/{project_id}/stories/{story_id}/tasks" endpoint
     And I set up the data
     """
@@ -32,7 +32,7 @@ Feature: Positive story task tests
     And I verify the sent data
 
   @create_project @create_story @delete_project
-  Scenario: Return a task created with description, position and not completed
+  Scenario: Create a task with description, position and not completed
     Given I set up a "POST" request to "/projects/{project_id}/stories/{story_id}/tasks" endpoint
     And I set up the data
     """

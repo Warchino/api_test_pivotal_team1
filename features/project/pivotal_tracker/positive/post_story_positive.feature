@@ -16,7 +16,7 @@ Feature: Create a new story in a project
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario: Create a new story with description
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
@@ -31,29 +31,36 @@ Feature: Create a new story in a project
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario Outline: Create a new story with different story type
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
     {
       "name":"Story creation name",
       "description": "Story creation API test",
-      "story_type": "feature"
+      "story_type": "<type>"
     }
     """
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Story" schema
     And I verify the sent data
+    Examples:
+      | type    |
+      | feature |
+      | bug     |
+      | chore   |
+      | release |
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario Outline: Create a new story with state variations
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
     {
       "name":"Story creation name",
       "description": "Story creation API test",
+      "current_state": "<state>",
       "story_type": "bug"
     }
     """
@@ -61,75 +68,15 @@ Feature: Create a new story in a project
     Then I get a "200" status code as response
     And I validate with "Story" schema
     And I verify the sent data
+    Examples:
+      | state     |
+      | started   |
+      | finished  |
+      | accepted  |
+      | unstarted |
 
   @create_project @delete_project
-  Scenario: Create a new story
-    Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
-    And I set up the data
-    """
-    {
-      "name":"Story creation name",
-      "description": "Story creation API test",
-      "story_type": "chore"
-    }
-    """
-    When I send the request
-    Then I get a "200" status code as response
-    And I validate with "Story" schema
-    And I verify the sent data
-
-  @create_project @delete_project
-  Scenario: Create a new story
-    Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
-    And I set up the data
-    """
-    {
-      "name":"Story creation name",
-      "description": "Story creation API test",
-      "story_type": "release"
-    }
-    """
-    When I send the request
-    Then I get a "200" status code as response
-    And I validate with "Story" schema
-    And I verify the sent data
-
-  @create_project @delete_project
-  Scenario: Create a new story
-    Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
-    And I set up the data
-    """
-    {
-      "name":"Story creation name",
-      "description": "Story creation API test",
-      "current_state": "started",
-      "story_type": "bug"
-    }
-    """
-    When I send the request
-    Then I get a "200" status code as response
-    And I validate with "Story" schema
-    And I verify the sent data
-
-  @create_project @delete_project
-  Scenario: Create a new story
-    Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
-    And I set up the data
-    """
-    {
-      "name":"Story creation name",
-      "description": "Story creation API test",
-      "current_state": "finished",
-      "story_type": "bug"
-    }
-    """
-    When I send the request
-    Then I get a "200" status code as response
-    And I validate with "Story" schema
-    And I verify the sent data
-
-  @create_project @delete_project
-  Scenario: Create a new story
+  Scenario: Create a new story variant 1
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
@@ -146,7 +93,7 @@ Feature: Create a new story in a project
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario: Create a new story variant 2
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
@@ -164,7 +111,7 @@ Feature: Create a new story in a project
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario: Create a new story variant 3
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
@@ -181,7 +128,7 @@ Feature: Create a new story in a project
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Create a new story
+  Scenario: Create a new story variant 4
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """
@@ -199,8 +146,8 @@ Feature: Create a new story in a project
     And I validate with "Story" schema
     And I verify the sent data
 
-    @create_project @delete_project
-  Scenario: Create a new story
+  @create_project @delete_project
+  Scenario: Create a new story variant 5
     Given I set up a "POST" request to "/projects/{project_id}/stories" endpoint
     And I set up the data
     """

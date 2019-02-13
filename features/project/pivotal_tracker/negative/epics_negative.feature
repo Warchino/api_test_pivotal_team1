@@ -15,7 +15,7 @@ Feature: Epics negative testing
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new epic with null name
     Given I set up a "POST" request to "/projects/{project_id}/epics" endpoint
     And I set up the data
@@ -44,7 +44,7 @@ Feature: Epics negative testing
     And I validate with "Error" schema
     And I validate the "Blank-label" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Create a new epic with int label name
     Given I set up a "POST" request to "/projects/{project_id}/epics" endpoint
     And I set up the data
