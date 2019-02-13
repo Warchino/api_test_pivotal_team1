@@ -1,4 +1,5 @@
-Feature: Get transitions of an specific story with body
+@positive
+Feature: Get transitions of an specific story with query request
 
   @create_project @create_story @delete_project
   Scenario Outline: Update more story's  with body request

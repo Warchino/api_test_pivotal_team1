@@ -60,8 +60,6 @@ def set_up_body(context):
     LOGGER.info("Add Data to request")
     context.sent_data = context.text
     body = json.loads(context.sent_data)
-    if "current_state" in body:
-        STORY_STATE.append(body.get("current_state"))
     context.client.set_body(json.dumps(body))
 
 

@@ -92,7 +92,7 @@ Feature: Manage memberships in an account
     And I verify the sent data of member
 
   @read_account @delete_data @bug
-  Scenario: Create a member in an account with email, name, initials, admin privileges but not create project privileges
+  Scenario: Create a member in an account with email, name, initials, admin privileges and created at
     Given I set up a "POST" request to "/accounts/{account_id}/memberships" endpoint
     When I set up the data
     """
