@@ -39,7 +39,6 @@ def get_status_code(context, status_code):
     :param status_code: Input status code.
     """
     LOGGER.info("Validation Status Code")
-    JsonHelper.print_pretty_json(context.response.json())
     expect(int(status_code)).to_equal(context.response.status_code)
 
 
