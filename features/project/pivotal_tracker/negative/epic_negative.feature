@@ -72,7 +72,7 @@ Feature: Negative test of Epic feature
     And I validate with "Error" schema
     And I validate the "Blank-label" error
 
-  @create_project @create_epic @delete_project @wip
+  @create_project @create_epic @delete_project @bug
   Scenario: Update epic int label
     Given I set up a "PUT" request to "/projects/{project_id}/epics/{epic_id}" endpoint
     And I set up the data
@@ -86,7 +86,7 @@ Feature: Negative test of Epic feature
     And I validate with "Error" schema
     And I validate the "Blank-label" error
 
-  @create_project @create_epic @delete_project @wip
+  @create_project @create_epic @delete_project @bug
   Scenario: Update epic wrong label
     Given I set up a "PUT" request to "/projects/{project_id}/epics/{epic_id}" endpoint
     And I set up the data

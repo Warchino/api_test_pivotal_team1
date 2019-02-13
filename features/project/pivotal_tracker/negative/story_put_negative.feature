@@ -141,7 +141,7 @@ Feature: Story Feature Negative Test
     And I validate with "Error" schema
     And I validate the "Must_be-one" error
 
-  @create_project @create_story @delete_project @wip
+  @create_project @create_story @delete_project @bug
   Scenario: Update an specific story with integer value
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
@@ -183,7 +183,7 @@ Feature: Story Feature Negative Test
     And I validate with "Error" schema
     And I validate the "Accepted_date" error
 
-  @create_project @create_story @delete_project @wip
+  @create_project @create_story @delete_project @bug
   Scenario: Update a new story with correct int accepted_at but not accepted
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
