@@ -9,7 +9,7 @@ from jsonschema import validate
 from core.logger.singleton_logger import SingletonLogger
 from core.rest_client.request_manager import RequestManager
 from core.utils.common_helper import CommonHelper
-from definitions import ERROR_DICT
+from definitions import ERROR_DICT, AUX_LIST
 from definitions import SCHEMA_PIVOTAL, STORY_STATE
 
 LOGGER = SingletonLogger().get_logger()
@@ -72,7 +72,12 @@ def set_up_body_params(context):
     LOGGER.info("Add Data to request")
     context.sent_data = context.text
     body = json.loads(context.sent_data)
-    STORY_STATE.append(body.get("current_state"))
+    if "limit" in body:
+        AUX_LIST.append(body.get("limit"))
+    if "offset" in body:
+        AUX_LIST.append(body.get("offset"))
+    if "current_state" in body:
+        STORY_STATE.append(body.get("current_state"))
     context.client.set_body(json.dumps(body))
 
 
@@ -87,6 +92,17 @@ def set_up(context):
     STORY_STATE.clear()
 
 
+@step(u'I compare states of limited transitions')
+def compare_limited_transitions(context):
+    """
+    Setting the data.
+    :param context: Input context.
+    """
+    for count, value in enumerate(context.response.json()):
+        expect(value.get('state')).to_equal(STORY_STATE[count])
+    STORY_STATE.clear()
+
+
 @step(u'I compare quantity transitions')
 def compare_quantity(context):
     """
@@ -94,6 +110,15 @@ def compare_quantity(context):
     :param context: Input context.
     """
     expect(len(STORY_STATE)).to_equal(len(context.response.json()))
+
+
+@step(u'I compare {limit} with transitions')
+def compare_quantity_limited(context, limit):
+    """
+    Send the request.
+    :param context: Input context.
+    """
+    expect(int(limit)).to_equal(len(context.response.json()))
 
 
 @step(u'I validate with "{read_schema}" schema')
