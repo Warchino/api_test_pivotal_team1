@@ -2,7 +2,7 @@
 Feature: new feature
 
   @read_account @post_membership_account @delete_data
-  Scenario: Set String value where there must be a boolean value in admin privileges of a member
+  Scenario: Update string value where there must be a boolean value in admin privileges of a member
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """
@@ -17,7 +17,7 @@ Feature: new feature
     And I validate the "Non-String_Boolean" error
 
   @read_account @post_membership_account @delete_data
-  Scenario: Set String value where there must be a boolean value in project creator privileges of a member
+  Scenario: Update string value where there must be a boolean value in project creator privileges of a member
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """
@@ -32,7 +32,7 @@ Feature: new feature
     And I validate the "Non-String_Boolean" error
 
   @read_account @post_membership_account @delete_data
-  Scenario: Set String value where there must be a boolean value in time keeper privileges of a member
+  Scenario: Update string value where there must be a boolean value in time keeper privileges of a member
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """
@@ -48,7 +48,7 @@ Feature: new feature
     And I validate the "Non-String_Boolean" error
 
   @read_account @post_membership_account @delete_data
-  Scenario: Set String value where there must be a boolean value in time enterer privileges of a member
+  Scenario: Update string value where there must be a boolean value in time enterer privileges of a member
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """

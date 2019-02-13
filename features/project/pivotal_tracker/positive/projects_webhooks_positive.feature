@@ -1,8 +1,8 @@
 @positive
-Feature: post webhooks of Project
+Feature: Webhooks Positive Test
 
   @create_project @delete_project
-  Scenario Outline: Post webhooks an specified project with  person_id
+  Scenario Outline: Create webhooks an specified project with  person_id
     Given I set up a "POST" request to "/projects/{project_id}/webhooks" endpoint
     And I set up the data
     """

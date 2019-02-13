@@ -2,7 +2,7 @@
 Feature: Projects Positive Test
 
   @read_project @delete_project
-  Scenario: create project name and iter
+  Scenario: Create project name and iter
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
