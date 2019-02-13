@@ -4,7 +4,7 @@ Feature: Get transitions of an specific story
   @create_project @create_story @delete_project
   Scenario: Check story's transitions
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
-    And I set up the params
+    And I set up the data
     """
     {
       "current_state": "unscheduled",
@@ -13,7 +13,7 @@ Feature: Get transitions of an specific story
     """
     And I send the request
     And I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
-    And I set up the params
+    And I set up the data
     """
     {
       "current_state": "started"
@@ -28,7 +28,7 @@ Feature: Get transitions of an specific story
   @create_project @create_story @delete_project
   Scenario: Check more story's transitions
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
-    And I set up the params
+    And I set up the data
     """
     {
       "current_state": "unscheduled",
@@ -37,7 +37,7 @@ Feature: Get transitions of an specific story
     """
     And I send the request
     And I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
-    And I set up the params
+    And I set up the data
     """
     {
       "current_state": "started"
@@ -45,7 +45,7 @@ Feature: Get transitions of an specific story
     """
     And I send the request
     And I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
-    And I set up the params
+    And I set up the data
     """
     {
       "current_state": "finished"

@@ -54,3 +54,5 @@ ERROR_DICT = {
 STORED_ID = {}
 
 STORY_STATE = []
+
+AUX_LIST = []
