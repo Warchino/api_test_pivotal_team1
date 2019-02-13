@@ -2,13 +2,13 @@
 Feature: Get Project Webhooks
 
   @create_project @delete_project
-  Scenario: Get Project Webhooks
+  Scenario: Read Project Webhooks
     Given I set up a "GET" request to "/projects/{project_id}/webhooks" endpoint
     When I send the request
     Then I get a "200" status code as response
 
   @create_project @delete_project
-  Scenario: Post an specified project integration
+  Scenario: Create an specified project integration
     Given I set up a "POST" request to "/projects/{project_id}/webhooks" endpoint
     And I set up the data
     """

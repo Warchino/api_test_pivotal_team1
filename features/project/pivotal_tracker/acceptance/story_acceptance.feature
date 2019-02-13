@@ -2,14 +2,14 @@
 Feature: Story Feature of pivotal tracker
 
   @create_project @create_story @delete_project
-  Scenario: Get an specific story
+  Scenario: Read an specific story
     Given I set up a "GET" request to "/projects/{project_id}/stories/{story_id}" endpoint
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Story" schema
 
   @create_project @create_story @delete_project
-  Scenario: Update an specific story
+  Scenario: Update an specific story by label
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
     """

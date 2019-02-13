@@ -2,7 +2,7 @@
 Feature: Epic feature
 
   @create_project @create_epic @delete_project
-  Scenario: Get an specific epic
+  Scenario: Read an specific epic
     Given I set up a "GET" request to "/projects/{project_id}/epics/{epic_id}" endpoint
     When I send the request
     Then I get a "200" status code as response

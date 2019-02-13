@@ -27,7 +27,8 @@ SCHEMA_PIVOTAL = {
     'Project-Memberships-Creation': os.path.join(ROOT_DIR,
                                                  'schemas/pivotal_tracker/project_memberships_creation.schema.json'),
     'Error': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error.schema.json'),
-    'Authorization': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error_unauthorized.schema.json')
+    'Authorization': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error_unauthorized.schema.json'),
+    'Error-Req': os.path.join(ROOT_DIR, 'schemas/pivotal_tracker/error_schema/error_requirement.schema.json')
 }
 SCHEMA_TODOLY = {
     'Creation': os.path.join(ROOT_DIR, 'schemas/todoly/projectcreation.schema.todoly.json')
@@ -67,6 +68,11 @@ ERROR_DICT = {
     "Valid_url": "One or more consistency checks failed on the supplied WebhookActivityChannel.",
     "Must_be_https": "Webhook must use https.",
     "Account-Access": "You aren't authorized to access the requested resource.",
+    "Non-String_Boolean": "'(.+?)' must be a non-string boolean true or false value",
+    "Member-Values": "One or more consistency checks failed on the supplied Person.",
+    "ID-email": "Do not send person_id with email, initials, or name in the same request.",
+    "Parameter": "this endpoint cannot accept the parameter: .+?.",
+    "Missing-Param": "this endpoint requires the parameter: .+?."
 }
 
 STORED_ID = {}

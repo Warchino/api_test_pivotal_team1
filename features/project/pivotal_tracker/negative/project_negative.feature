@@ -128,7 +128,7 @@ Feature: Project Negative Test
     And I validate with "Error" schema
     And I validate the "Long-extended_string" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Update project wrong time zone
     Given I set up a "PUT" request to "/projects/{project_id}" endpoint
     And I set up the data
@@ -156,7 +156,7 @@ Feature: Project Negative Test
     And I validate with "Error" schema
     And I validate the "ISO-date" error
 
-  @create_project @delete_project @wip
+  @create_project @delete_project @bug
   Scenario: Update different wrong project TZ
     Given I set up a "PUT" request to "/projects/{project_id}" endpoint
     And I set up the data

@@ -2,7 +2,7 @@
 Feature: Update task's information
 
   @create_project @create_story @create_task @delete_project
-  Scenario: Update description of an specific task
+  Scenario: Update description of an specific task with description
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}/tasks/{task_id}" endpoint
     And I set up the data
     """
@@ -16,7 +16,7 @@ Feature: Update task's information
     And I verify the sent data
 
   @create_project @create_story @create_task @delete_project
-  Scenario: Update description of an specific task
+  Scenario: Update description of an specific task with position
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}/tasks/{task_id}" endpoint
     And I set up the data
     """
@@ -31,7 +31,7 @@ Feature: Update task's information
     And I verify the sent data
 
   @create_project @create_story @create_task @delete_project
-  Scenario: Update description of an specific task
+  Scenario: Update description of an specific task with complete parameter
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}/tasks/{task_id}" endpoint
     And I set up the data
     """

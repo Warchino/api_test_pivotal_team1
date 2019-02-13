@@ -16,7 +16,7 @@ Feature: Epics acceptance
     And I verify the sent data
 
   @create_project @delete_project
-  Scenario: Get an specified project
+  Scenario: Read an specified project
     Given I set up a "GET" request to "/projects/{project_id}/epics" endpoint
     When I send the request
     Then I get a "200" status code as response

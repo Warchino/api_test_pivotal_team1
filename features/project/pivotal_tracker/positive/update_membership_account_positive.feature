@@ -2,7 +2,7 @@
 Feature: Modify configuration of member in an account
 
   @read_account @post_membership_account @delete_data
-  Scenario: Give privileges to a member in an account
+  Scenario: Update privileges to a member in an account
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """
@@ -17,7 +17,7 @@ Feature: Modify configuration of member in an account
     And I verify the sent data
 
   @read_account @post_membership_account @delete_data
-  Scenario: Give admin privileges without project creator privileges to a member in an account
+  Scenario: Update admin privileges without project creator privileges to a member in an account
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """
@@ -32,7 +32,7 @@ Feature: Modify configuration of member in an account
     And I verify the sent data
 
   @read_account @post_membership_account @delete_data
-  Scenario: quite privileges to a member in an account
+  Scenario: Update less privileges to a member in an account
     Given I set up a "PUT" request to "/accounts/{account_id}/memberships/{member_id}" endpoint
     And I set up the data
       """

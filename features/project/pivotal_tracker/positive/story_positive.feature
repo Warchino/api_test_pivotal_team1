@@ -2,7 +2,7 @@
 Feature: Story Feature of pivotal tracker
 
   @create_project @create_story @delete_project
-  Scenario: Update an specific story
+  Scenario: Update an specific story with labels
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
     """
@@ -20,7 +20,7 @@ Feature: Story Feature of pivotal tracker
     And I verify the sent labels
 
   @create_project @create_story @delete_project
-  Scenario: Update an specific story
+  Scenario: Update an specific story none label
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
     """
@@ -35,7 +35,7 @@ Feature: Story Feature of pivotal tracker
     And I verify the sent labels
 
   @create_project @create_story @delete_project
-  Scenario Outline: Update an specific story
+  Scenario Outline: Update an specific story with different states
     Given I set up a "PUT" request to "/projects/{project_id}/stories/{story_id}" endpoint
     And I set up the data
     """
